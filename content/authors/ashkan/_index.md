@@ -70,7 +70,6 @@ highlight_name: false
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
 - Researchers
-- PhD Students
 ---
 
 University College London i4health PhD Student. Centre for Medical Image Computing. Medical image analysis w/ and w/o Deep Learning mostly of airways.
