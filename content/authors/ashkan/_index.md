@@ -1,6 +1,7 @@
 ---
 role: PhD Student
-bio: blah blah
+bio: University College London i4health PhD Student
+
 interests:
   - Medical Image Analysis
   - Medical Imaging Computing
