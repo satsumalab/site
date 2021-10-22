@@ -123,10 +123,7 @@ marketing:
   baidu_site_verification: ''
   baidu_tongji: ''
 cms:
-  backend:
-    name: github
-    repo: satsumaresearch/site
-  branch: main
+  branch: dev
   local_backend: false
 icon:
   pack:
