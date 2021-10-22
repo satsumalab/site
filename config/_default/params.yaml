@@ -125,6 +125,11 @@ marketing:
 cms:
   branch: dev
   local_backend: false
+  # publish_mode: editorial_workflow
+  backend:
+    name: github
+    repo:  satsumaresearch/site  # Path to your GitHub repository
+    branch: dev
 icon:
   pack:
     ai: true
