@@ -1,0 +1,17 @@
+content:
+- content/**/*
+
+new-profile:
+- content/authors/*
+
+new-publication:
+- content/publication/*
+
+new-news:
+- content/post/*
+
+edit-frontpage:
+- content/home/welcome.md
+
+needs-review:
+- **/*
