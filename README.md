@@ -11,9 +11,10 @@ Content is written in [markdown](https://guides.github.com/features/mastering-ma
 All content editing should be done in [/content/](/content), if in doubt you're welcome to ask. If your content doesn't fall within these categories then discuss with Joe/Ashkan to see what can be done.
 
 1. Create a new branch with your name. Only edit the repository within this branch.
+  * Do not push to `main`, ever. Only pull request from another branch.
 2. Make content changes in in [/content/](/content), commit with a short description and push.
 3. Make a pull request to the main branch. Check the preview deploy, if you wish to make anymore changes, you can do so by repeating 2, this should update the pull request.
-4. A fellow group member will review your changes, if approved your changes will be pulled to the main branch, netlify will re-build the site and it will go live.
+4. A fellow group member/Joe will review your changes, if there are problems they can make small changes (e.g. grammer/typos) or they can comment. Once approved, it will be pulled to the main branch, Netlify will re-build the site and it will go live.
 
 For how to include videos, latex math etc. see [wowchemy's page elements documentation](https://wowchemy.com/docs/content/)
 
