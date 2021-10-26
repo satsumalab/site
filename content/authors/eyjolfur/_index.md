@@ -1,7 +1,6 @@
 ---
 role: Postdoctoral Researcher
-bio: University of Iceland: BSc Physics, BSc Computer Science
-University of Chicago: PhD Medical Physics
+bio: Postdoctoral Researcher at CMIC
 
 interests:
   - Medical Image Analysis
@@ -25,15 +24,15 @@ organizations:
     url: ""
 education:
   courses:
-    - BSc Physics
-      institution: University of Iceland
-      year: 2012
-    - BSc Computer Science
-      institution: University of Iceland
-      year: 2012
-    - PhD Medical Physics
+    - course: PhD Medical Physics
       institution: University of Chicago
       year: 2019
+    - course: BSc Physics
+      institution: University of Iceland
+      year: 2012
+    - course: BSc Computer Science
+      institution: University of Iceland
+      year: 2012
 superuser: false
 user_groups:
   - Researchers
