@@ -17,4 +17,6 @@ edit-frontpage:
 - content/home/welcome.md
 
 needs-review:
+- '*'
 - '*/**'
+- '*/**/*'
