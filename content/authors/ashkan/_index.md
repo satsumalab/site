@@ -4,8 +4,8 @@ bio: University College London i4health PhD Student
 
 interests:
   - Medical Image Analysis
-  - Medical Imaging Computing
-  - Deeplearning
+  - Medical Image Computing
+  - Deep Learning
 social:
   - icon: globe
     icon_pack: fas
