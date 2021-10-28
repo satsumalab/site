@@ -38,7 +38,7 @@ user_groups:
   - Researchers
 highlight_name: false
 title: Mou-Cheng Xu
-email: "moucheng.xu.18@ucl.ac.uk"
+email: ""
 ---
 
 University College London i4health PhD Student. Centre for Medical Image Computing. Interested in healthcare AI and food.
