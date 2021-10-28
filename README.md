@@ -44,7 +44,7 @@ Papers are under [/content/publication](/content/publication), follow adding con
   * Add as many of the links as you can! Particular PDF if your paper is open-access ONLY.
 4. You can add a featured image, make sure it is named `featured.{png/jpg}` and saved within your paper's folder.
 
-**Alternatively**:  Can you use the [academic python package](https://pypi.org/project/academic/) for Hugo websites. Then edit these files to comply with the above.
+**Alternatively**:  You can use the [academic python package](https://pypi.org/project/academic/) for Hugo websites. Then edit these files to comply with the above.
 
 `pip3 install -U academic`
 
