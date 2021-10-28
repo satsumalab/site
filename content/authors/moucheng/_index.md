@@ -22,10 +22,6 @@ social:
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/moucheng-xu/
-
-<!--   - icon: orcid
-    icon_pack: ai
-    link: https://orcid.org/0000-0002-0802-5590 -->
 organizations:
   - name: University College London
     url: ""
@@ -42,7 +38,7 @@ user_groups:
   - Researchers
 highlight_name: false
 title: Mou-Cheng Xu
-email: ""
+email: "moucheng.xu.18@ucl.ac.uk"
 ---
 
 University College London i4health PhD Student. Centre for Medical Image Computing. Interested in healthcare AI and food.
