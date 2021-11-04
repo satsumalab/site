@@ -15,7 +15,7 @@ social:
   - icon: github
     icon_pack: fab
     link: https://github.com/brangl
-  - icon: google-scholar
+  - icon: researchgate
     icon_pack: ai
     link: https://www.researchgate.net/profile/Bojidar-Rangelov
   - icon: orcid
@@ -40,7 +40,7 @@ user_groups:
   - Researchers
 highlight_name: false
 title: Bojidar Rangelov
-email: "bojidar.rangelov.17@ucl.ac.uk"
+email: ""
 ---
 
 University College London i4health PhD Student. Centre for Medical Image Computing. Medical image analysis and disease modelling for lung disease (COPD, COVID-19). Interted in AI, computer vision and computational modelling for medical imaging. 
