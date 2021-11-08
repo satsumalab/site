@@ -43,4 +43,4 @@ title: Bojidar Rangelov
 email: ""
 ---
 
-University College London i4health PhD Student. Centre for Medical Image Computing. Medical image analysis and disease modelling for lung disease (COPD, COVID-19). Interted in AI, computer vision and computational modelling for medical imaging. 
+University College London i4health PhD Student. Centre for Medical Image Computing. Medical image analysis and disease modelling for lung disease (COPD, COVID-19). Interested in AI, computer vision and computational modelling for medical imaging. 
