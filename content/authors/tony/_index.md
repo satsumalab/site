@@ -8,13 +8,8 @@ interests:
   - Medical Image Computing
   - Ultrasound Elastography
   - Biomechanics
-  
+
 social:
-  <!--
-  - icon: globe
-    icon_pack: fas
-    link: https://ashkanpakzad.github.io
-  -->
   - icon: linkedin
     icon_pack: fab
     link: https://uk.linkedin.com/in/tony-wing-keung-cheung-29115510
