@@ -8,25 +8,26 @@ on:
   pull_request:
     branches: [ main ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
   build:
+    name: Comment a pull_request
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Comment a pull_request
+        uses: mb2dev/github-action-comment-pull-request@1.0.0
+        with:
+          message: "Thank you for submitting this PR! Please **WAIT** for your contribution to be reviewed. Do NOT merge until checks are complete. Do NOT merge until this PR is approved."
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          reactions: "+1 | -1 | laugh | hooray | confused | heart | rocket | eyes"
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Thank you for submitting this PR.  
-          echo WAIT for your contribution to be reviewed.
-          echo do NOT merge until checks are complete.
-          echo do NOT merge until this PR is approved.
+
+
+            
