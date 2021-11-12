@@ -25,7 +25,7 @@ education:
       institution: University of Chinese Academy of Sciences, China
       year: 2017
     - course: BSc in Information Engineering
-      institution: Xidian University, Egypt
+      institution: Xidian University, China
       year: 2014
 superuser: false
 user_groups:
