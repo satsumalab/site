@@ -1,5 +1,5 @@
 ---
-role: Postdoctoral Researcher
+role: Research Fellow
 bio: Research Fellow at CMIC
 
 interests:
