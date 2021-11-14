@@ -44,4 +44,4 @@ title: Tony Cheung
 email: ""
 ---
 
-He is currently a Research Fellow with the Centre of Medical Image Computing, University College London. He was a Postdoctoral Research Assistant with the School of Engineering and Materials Science, Queen Mary University of London.
+Tony is currently a Research Fellow with the Centre of Medical Image Computing, University College London. He was a Postdoctoral Research Assistant with the School of Engineering and Materials Science, Queen Mary University of London.
