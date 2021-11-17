@@ -3,9 +3,9 @@
 # Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
-title: Satsuma Research Group # Website name
-baseurl: '' # Website URL
-copyright: '© {year} Satsuma Research Group' # Footer text, e.g. '© {year} Me'
+title: Satsuma # Website name
+baseurl: 'satsuma.cs.ucl.ac.uk' # Website URL
+copyright: '© {year} Satsuma Lab' # Footer text, e.g. '© {year} Me'
 
 ############################
 ## LANGUAGE
