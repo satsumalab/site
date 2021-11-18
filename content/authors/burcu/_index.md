@@ -39,4 +39,4 @@ title: Burcu Ozaltin
 email: ""
 ---
 
-Burcu is a PhD student at the Centre for Medical Image Computing (CMIC). Her current research is on IPF (Idiopathic Pulmonary Fibrosis) , identifying why some patients experience a delayed diagnosis. Her analysis involves EHRs (Electronic Health Records) of numerous patients across England, working closely with the Institute of Health Informatics at UCL. She is particularly interested in quantitative analysis of primary care (CPRD), hospitalizations (HES), and mortality (ONS).
+Burcu is a PhD student at the Centre for Medical Image Computing (CMIC). Her current research is on IPF (Idiopathic Pulmonary Fibrosis) , identifying why some patients experience a delayed diagnosis. Her analysis involves EHRs (Electronic Health Records) of numerous patients across England, working closely with the Institute of Health Informatics at UCL. She is particularly interested in quantitative analysis of primary care (CPRD), hospitalizations (HES), and mortality (ONS) data.
