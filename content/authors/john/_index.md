@@ -7,9 +7,9 @@ interests:
   - Deep Learning
   - Data Management
 social:
-- icon: envelope
-  icon_pack: fas
-  link: 'mailto:j.mccabe@ucl.ac.uk'
+  - icon: envelope
+    icon_pack: fas
+    link: 'mailto:j.mccabe@ucl.ac.uk'
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/john-mccabe-b317a247/
