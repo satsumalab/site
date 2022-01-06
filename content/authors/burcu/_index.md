@@ -6,7 +6,7 @@ interests:
   - Medical Image Analysis
   - Quantitative Analysis
   - Statistics
-  
+
 social:
   - icon: envelope
     icon_pack: fas
@@ -34,7 +34,7 @@ education:
 superuser: false
 user_groups:
   - Researchers
-highlight_name: false
+highlight_name: true
 title: Burcu Ozaltin
 email: ""
 ---

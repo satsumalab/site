@@ -37,7 +37,7 @@ education:
 superuser: false
 user_groups:
   - Researchers
-highlight_name: false
+highlight_name: true
 title: Shahab Aslani
 email: ""
 ---

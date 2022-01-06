@@ -42,7 +42,7 @@ education:
 superuser: false
 user_groups:
   - Researchers
-highlight_name: false
+highlight_name: true
 title: Ahmed H. Shahin
 email: ""
 ---
