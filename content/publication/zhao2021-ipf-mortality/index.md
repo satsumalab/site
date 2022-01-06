@@ -60,6 +60,6 @@ publication_types:
 - '2'
 abstract: 'Emphysema is one of the most common pulmonary comorbidities of idiopathic pulmonary fibrosis (IPF), presenting in about one-third of IPF patients [1]. The term combined pulmonary fibrosis and emphysema (CPFE) has been used to describe a potential phenotype characterised by the coexistence of upper lobe-predominant emphysema, lower lobe-predominant fibrosis and relative preservation of lung volumes (forced vital capacity; FVC) in the context of a disproportionately reduced gas transfer (diffusing capacity of the lung for carbon monoxide; DLCO) [1–3]. With regard to patient survival, it remains unclear whether mortality in patients with CPFE reflects the cumulative effects of two disease processes (emphysema and fibrosis), or whether CPFE represents a distinct disease phenotype where outcome is worse than the sum of disease parts (emphysema and fibrosis).'
 publication: '*ERJ Open Research*'
-url_pdf: https://openres.ersjournals.com/content/7/3/00316-2021
+url_pdf:
 doi: 10.1183/23120541.00316-2021
 ---
