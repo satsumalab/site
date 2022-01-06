@@ -6,7 +6,8 @@ title: Joseph Jacob
 superuser: false
 
 # Role/position
-role: Wellcome Trust Fellow
+role: Principal Investigator
+bio: Wellcome Trust Fellow
 
 # Organizations/Affiliations
 organizations:
@@ -14,7 +15,7 @@ organizations:
   url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: # My research interests include distributed robotics, mobile computing and programmable matter.
+
 
 interests:
 - Respiratory Medicine

@@ -1,6 +1,6 @@
 ---
 role: Postdoctoral Researcher
-bio: Postdoctoral Researcher at CMIC
+bio: Centre for Medical Image Computing
 
 interests:
   - Medical Image Analysis

@@ -1,6 +1,6 @@
 ---
 role: PhD Student
-bio: PhD Student at University College London
+bio: University College London
 
 interests:
   - Medical Image Analysis

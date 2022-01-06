@@ -1,6 +1,6 @@
 ---
 role: PhD Student
-bio: University College London i4health PhD Student (iCASE)
+bio: i4health (iCASE)
 
 interests:
   - Medical Image Analysis

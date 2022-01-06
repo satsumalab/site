@@ -1,6 +1,6 @@
 ---
 role: Research Fellow
-bio: Research Fellow, Centre for Medical Image Computing & Department of Computer Science, University College London
+bio: Centre for Medical Image Computing & Department of Computer Science, University College London
 
 interests:
   - Deep Learning

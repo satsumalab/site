@@ -1,6 +1,6 @@
 ---
 role: Research Fellow
-bio: Research Fellow at CMIC
+bio: Centre for Medical Image Computing
 
 interests:
   - Medical Image Analysis
