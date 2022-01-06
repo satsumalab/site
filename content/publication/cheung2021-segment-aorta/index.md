@@ -36,10 +36,12 @@ abstract: A fully automatic two-dimensional Unet model is proposed to segment ao
 summary:
 
 tags:
-- Deeplearning
-- medRxiv
-- Aorta
-- Heart
+- deep learning
+- segmentation
+- computed tomography
+- aorta
+- heart
+- open access
 
 featured: false
 
