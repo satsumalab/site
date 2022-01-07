@@ -3,7 +3,7 @@
 
 title: "Evaluation of automated airway morphological quantification for assessing fibrosing lung disease"
 subtitle: ''
-summary: "Patients with certain lung damage typically have abnormally larger airways. This difference in airway size between patients and healthy individuals can be seen with 3D xrays, known as a CT scan. We present a new software program called AirQuant to measure all airways of a patient's CT scan. We compare measurements between 14 healthy individuals and 14 diseased patients. We found that airway disease was worse in the lower lungs and furthermore their airways were also more twisted. Measurements used by AirQuant, has potential as new markers in imaging to help us understand how bad a patient's disease is."
+summary: "Patients with lung damage by scarring typically have abnormally larger airways. This difference in airway size between patients and healthy individuals can be seen with 3D xrays, known as a CT scan. We present a new software program called AirQuant to measure all airways of a patient's CT scan. We compare measurements between 14 healthy individuals and 14 diseased patients. We found that airway disease was worse in the lower lungs and furthermore their airways were also more twisted. Measurements used by AirQuant, has potential as new markers in imaging to help us understand how bad a patient's disease is."
 
 authors:
 - Ashkan Pakzad
