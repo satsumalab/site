@@ -1,6 +1,6 @@
 ---
 role: PhD Student
-bio: PhD Student at University College London
+bio: University College London
 
 interests:
   - Medical Image Analysis
@@ -42,7 +42,7 @@ education:
 superuser: false
 user_groups:
   - Researchers
-highlight_name: false
+highlight_name: true
 title: Ahmed H. Shahin
 email: ""
 ---

@@ -1,6 +1,6 @@
 ---
 role: Research Fellow
-bio: Research Fellow at CMIC
+bio: Centre for Medical Image Computing
 
 interests:
   - Medical Image Analysis
@@ -34,7 +34,7 @@ education:
 superuser: false
 user_groups:
   - Researchers
-highlight_name: false
+highlight_name: true
 title: Yaozhi Lu
 email: ""
 ---

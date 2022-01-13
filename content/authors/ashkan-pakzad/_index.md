@@ -1,6 +1,6 @@
 ---
 role: PhD Student
-bio: University College London i4health PhD Student
+bio: i4health
 
 interests:
   - Medical Image Analysis
@@ -36,10 +36,10 @@ education:
     - course: MSci Medical Physics
       institution: University College London
       year: 2017
-superuser: true
+superuser: false
 user_groups:
   - Researchers
-highlight_name: false
+highlight_name: true
 title: Ashkan Pakzad
 email: ""
 ---

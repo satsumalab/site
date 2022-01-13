@@ -26,12 +26,14 @@ authors:
 - Daniel C. Alexander
 - Joseph Jacob
 tags:
-- Pleuroparenchymal fibroelastosis
+- image analysis
+- computed tomography
+- mortality
+- pulmonary fibrosis
 - PPFE
-- Idiopathic pulmonary fibrosis
 - IPF
-- Computed tomography
-- Quantitative analysis
+- open access
+
 categories: []
 date: '2021-01-01'
 lastmod: 2021-11-17T17:00:14Z

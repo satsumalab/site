@@ -1,6 +1,6 @@
 ---
 role: PhD Student
-bio: University College London i4health PhD Student (iCASE)
+bio: i4health (iCASE)
 
 interests:
   - Medical Image Analysis
@@ -38,9 +38,9 @@ education:
 superuser: false
 user_groups:
   - Researchers
-highlight_name: false
+highlight_name: true
 title: Bojidar Rangelov
 email: ""
 ---
 
-University College London i4health PhD Student. Centre for Medical Image Computing. Medical image analysis and disease modelling for lung disease (COPD, COVID-19). Interested in AI, computer vision and computational modelling for medical imaging. 
+University College London i4health PhD Student. Centre for Medical Image Computing. Medical image analysis and disease modelling for lung disease (COPD, COVID-19). Interested in AI, computer vision and computational modelling for medical imaging.

@@ -20,22 +20,16 @@ twitter: ''
 
 # Contact (edit or remove options as required)
 
-email: test@example.org
-phone: 888 888 88 88
+email: a.pakzad@cs.ucl.ac.uk
 address:
-  street: 450 Serra Mall
-  city: Stanford
-  region: CA
-  postcode: '94305'
-  country: United States
-  country_code: US
+  street: 90 High Holborn
+  city: London
+  postcode: 'WC1V 6LJ'
+  country: United Kingdom
+  country_code: UK
 coordinates:
-  latitude: '37.4275'
-  longitude: '-122.1697'
-directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
-office_hours:
-  - 'Monday 10:00 to 13:00'
-  - 'Wednesday 09:00 to 10:00'
+  latitude: '51.5182'
+  longitude: '0.1181'
 appointment_url: 'https://calendly.com'
 contact_links:
 #  - icon: comments
@@ -67,9 +61,9 @@ math: false
 diagram: false
 privacy_pack: false
 show_related:
-  post: true
+  post: false
   project: true
-  publication: true
+  publication: false
   talk: true
 reading_time: true
 section_pager: false
@@ -117,9 +111,9 @@ map:
   api_key: ''
   zoom: 15
 marketing:
-  google_analytics: ''
+  google_analytics: 'G-R7E6Y4LDPX'
   google_tag_manager: ''
-  google_site_verification: ''
+  google_site_verification: 'google23630caeef26e127'
   baidu_site_verification: ''
   baidu_tongji: ''
 cms:
