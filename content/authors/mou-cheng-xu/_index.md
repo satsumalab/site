@@ -18,7 +18,7 @@ social:
     link: https://github.com/moucheng2017
   - icon: twitter
     icon_pack: fab
-    link: https://twitter.com/ashkanpakzad
+    link: https://twitter.com/moucheng_xu
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/moucheng-xu/
