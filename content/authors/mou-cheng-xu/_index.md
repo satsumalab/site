@@ -41,4 +41,4 @@ title: Mou-Cheng Xu
 email: ""
 ---
 
-University College London i4health PhD Student. Centre for Medical Image Computing. Interested in healthcare AI and food.
+PhD Student at UCL Centre for Medical Image Computing and GlaxoSmithKline (GSK). Interested in healthcare AI and food. 
