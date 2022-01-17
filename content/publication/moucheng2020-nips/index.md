@@ -21,8 +21,7 @@ tags:
 - open access
 
 categories: []
-date: '2022-01-17'
-lastmod: 2021-11-17T17:00:14Z
+date: '2020-12-07'
 featured: false
 draft: false
 
@@ -67,5 +66,5 @@ spatial characteristics of annotators’ mistakes. Our code is available at http
 //github.com/moucheng2017/Learn_Noisy_Labels_Medical_Images.'
 publication: '*AdvancesInNeuralInformationProcessingSystems*'
 url_pdf: https://proceedings.neurips.cc/paper/2020/hash/b5d17ed2b502da15aa727af0d51508d6-Abstract.html
-doi: 
+url_code: https://github.com/moucheng2017/Learn_Noisy_Labels_Medical_Images
 ---
