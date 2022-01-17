@@ -17,8 +17,7 @@ tags:
 - open access
 
 categories: []
-date: '2022-01-17'
-lastmod: 2021-11-17T17:00:14Z
+date: '2022-09-06'
 featured: false
 draft: false
 
@@ -59,5 +58,5 @@ proposed attention mechanism can benefit a wide range of medical and computer vi
 tasks, which suffer from over-detection of background.'
 publication: '*BritishMachineVisionConference*'
 url_pdf: https://www.bmvc2020-conference.com/assets/papers/0335.pdf
-doi: 
+url_code: https://github.com/moucheng2017/Pay_Attention_To_Mistakes
 ---
