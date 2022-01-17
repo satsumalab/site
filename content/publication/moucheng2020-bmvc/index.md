@@ -10,16 +10,15 @@ authors:
 - Daniel C. Alexander
 - Joseph Jacob
 tags:
-- Deep Learning
-- computer vision
+- deep learning
 - soft attention
-- class imbalance
+- computer vision
 - segmentation
 - open access
 
 categories: []
-date: '2022-01-16'
-lastmod: 2022-01-16T17:00:14Z
+date: '2022-01-17'
+lastmod: 2021-11-17T17:00:14Z
 featured: false
 draft: false
 
@@ -37,13 +36,12 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: []
-publishDate: '2020-09-07T16:59:59.637688Z'
+publishDate: '2020-09-06T16:59:59.637688Z'
 publication_types:
 - '1'
 abstract: 'In convolutional neural network based medical image segmentation, the periphery of
 foreground regions representing malignant tissues may be disproportionately assigned as
-belonging to the background class of healthy tissues. 
-Misclassification of foreground pixels as the background class can lead to high false negative detection rates. In this paper, we propose a novel attention mechanism to directly address such
+belonging to the background class of healthy tissues [18][21][24][12][4]. Misclassification of foreground pixels as the background class can lead to high false negative detection rates. In this paper, we propose a novel attention mechanism to directly address such
 high false negative rates, called Paying Attention to Mistakes. Our attention mechanism
 steers the models towards false positive identification, which counters the existing bias
 towards false negatives. The proposed mechanism has two complementary implementations: (a) “explicit” steering of the model to attend to a larger Effective Receptive Field
@@ -60,6 +58,6 @@ baseline by more than 26%, whilst improving the IoU by more than 3%. We believe 
 proposed attention mechanism can benefit a wide range of medical and computer vision
 tasks, which suffer from over-detection of background.'
 publication: '*BritishMachineVisionConference*'
-url_pdf:
-doi:
+url_pdf: https://www.bmvc2020-conference.com/assets/papers/0335.pdf
+doi: 
 ---
