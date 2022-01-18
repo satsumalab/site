@@ -12,7 +12,7 @@ authors:
 - Ryo Torii
 - Rhodri Davies
 - James Moon
-- Daniel Alexander
+- Daniel C. Alexander
 - Joseph Jacob
 date: "2021-02-18T00:00:00Z"
 doi: "10.1101/2021.02.18.21252005"
@@ -27,7 +27,7 @@ publishDate: "2017-01-01T00:00:00Z"
 publication_types: ["3"]
 
 # Publication name and optional abbreviated publication name.
-publication: "medRxiv"
+publication: '*medRxiv*'
 publication_short: ""
 
 abstract: A fully automatic two-dimensional Unet model is proposed to segment aorta and coronary arteries in computed tomography images. Two models are trained to segment two regions of interest, (1) the aorta and the coronary arteries or (2) the coronary arteries alone. Our method achieves 91.20% and 88.80% dice similarity coefficient accuracy on regions of interest 1 and 2 respectively. Compared with a semi-automatic segmentation method, our model performs better when segmenting the coronary arteries alone. The performance of the proposed method is comparable to existing published two-dimensional or three-dimensional deep learning models. Furthermore, the algorithmic and graphical processing unit memory efficiencies are maintained such that the model can be deployed within hospital computer networks where graphical processing units are typically not available.
@@ -36,17 +36,19 @@ abstract: A fully automatic two-dimensional Unet model is proposed to segment ao
 summary:
 
 tags:
-- Deeplearning
-- medRxiv
-- Aorta
-- Heart
+- deep learning
+- segmentation
+- computed tomography
+- aorta
+- heart
+- open access
 
 featured: false
 
 # links:
 # - name: ""
 #   url: ""
-url_pdf: https://www.medrxiv.org/content/early/2021/02/20/2021.02.18.21252005.full.pdf
+url_pdf: ''
 url_code: ''
 url_dataset: ''
 url_poster: ''
