@@ -66,7 +66,7 @@ News posts are under [/content/post](/content/post), follow adding content instr
 
 ## Notes
 * If you set `publishDate` to the future, it will not appear on the site until after that date.
-* Simple markdown is plenty enough for adding/editing content, though if you want more, see [wowchemy's documentation](https://wowchemy.com/docs/) .
+* Simple markdown is plenty enough for adding/editing content, though if you want more, see [wowchemy's documentation](https://wowchemy.com/docs/).
 
 
 # Local live preview
