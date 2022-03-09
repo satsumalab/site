@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: 'Learning to Pay Attention to Mistakes'
+title: 'Learning Morphological Feature Perturbation for Semi-Supervised Segmentation'
 subtitle: ''
 summary: ''
 authors:
@@ -49,7 +49,7 @@ unlabelled images thereby generating eroded features. We then apply a consistenc
 methods on a CT-based pulmonary vessel segmentation task and a MRI-based brain tumour
 segmentation task. In addition, we show that the effectiveness of MisMatch comes from
 better model calibration than its supervised learning counterpart.'
-publication: '*MedicalImagingWithDeepLearning*'
+publication: 'Medical Imaging with Deep Learning (MIDL)'
 url_pdf: https://openreview.net/forum?id=OL6tAasXCmi
 url_code: https://github.com/moucheng2017/Morphological_Feature_Perturbation_SSL
 ---

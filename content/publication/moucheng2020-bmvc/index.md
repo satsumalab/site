@@ -56,7 +56,7 @@ Intersection over Union (IoU) and/or Hausdorff Distance (HD). For instance, in t
 baseline by more than 26%, whilst improving the IoU by more than 3%. We believe our
 proposed attention mechanism can benefit a wide range of medical and computer vision
 tasks, which suffer from over-detection of background.'
-publication: '*BritishMachineVisionConference*'
+publication: 'British Machine Vision Conference (BMVC)'
 url_pdf: https://www.bmvc2020-conference.com/assets/papers/0335.pdf
 url_code: https://github.com/moucheng2017/Pay_Attention_To_Mistakes
 ---

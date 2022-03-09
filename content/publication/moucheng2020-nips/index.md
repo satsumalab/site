@@ -64,7 +64,7 @@ in cases where the number of annotations is small and the amount of disagreement
 is large. The experiments also show strong ability to capture the complex
 spatial characteristics of annotators’ mistakes. Our code is available at https:
 //github.com/moucheng2017/Learn_Noisy_Labels_Medical_Images.'
-publication: '*AdvancesInNeuralInformationProcessingSystems*'
+publication: 'Advances In Neural Information Processing Systems (NeurIPS)'
 url_pdf: https://proceedings.neurips.cc/paper/2020/hash/b5d17ed2b502da15aa727af0d51508d6-Abstract.html
 url_code: https://github.com/moucheng2017/Learn_Noisy_Labels_Medical_Images
 ---
