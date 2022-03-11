@@ -2,6 +2,8 @@
 title: Outreach video - Imaging for Cystic Fibrosis
 date: 2022-03-11
 authors: ["ashkan-pakzad"]
+image:
+  preview_only: true
 # https://wowchemy.com/docs/content/blog-posts/
 ---
 
