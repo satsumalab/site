@@ -10,6 +10,6 @@ image:
 Satsuma Lab presenting two posters at the special BMVA symposium 2022 in Manchester, UK!
 
 Checkout our posters on:
-* [Learning Morphological Feature Perturbation for Semi-Supervised Segmentation](http://localhost:1313/publication/moucheng2022-midl/)
+* [Learning Morphological Feature Perturbation for Semi-Supervised Segmentation](/publication/moucheng2022-midl/)
 
 * [Unsupervised airway measurement to predict survival in bronchiectasis](https://ashkanpakzad.github.io/project/unsupervised-airway/)
