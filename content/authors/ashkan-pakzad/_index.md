@@ -5,7 +5,9 @@ bio: i4health
 interests:
   - Medical Image Analysis
   - Medical Image Computing
-  - Deep Learning
+  - Computer Vision
+  - Machine Learning
+
 social:
   - icon: globe
     icon_pack: fas

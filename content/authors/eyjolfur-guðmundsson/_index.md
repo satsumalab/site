@@ -1,5 +1,5 @@
 ---
-role: Postdoctoral Researcher
+role: Former Postdoctoral Researcher
 bio: Centre for Medical Image Computing
 
 interests:
@@ -35,7 +35,7 @@ education:
       year: 2012
 superuser: false
 user_groups:
-  - Researchers
+  - Alumni
 highlight_name: true
 title: Eyjólfur Guðmundsson
 email: ""

@@ -19,8 +19,8 @@ content:
   - Principal Investigator
   - Researchers
   - Administrators
-  - Visitors
   - Alumni
+  - Collaborators
 design:
   show_interests: false
   show_role: true
