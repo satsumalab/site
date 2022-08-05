@@ -2,21 +2,19 @@ readme:
 - README.md
 
 content:
-- content/**/*
+- content/**
 
-new-profile:
+profile:
 - content/authors/*
 
-new-publication:
+publication:
 - content/publication/*
 
-new-news:
+news:
 - content/post/*
 
-edit-frontpage:
+frontpage:
 - content/home/welcome.md
 
 needs-review:
-- '*'
-- '*/**'
-- '*/**/*'
+- '**'
