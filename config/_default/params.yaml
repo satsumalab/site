@@ -22,15 +22,15 @@ twitter: ''
 
 email: a.pakzad@cs.ucl.ac.uk
 address:
-  street: 90 High Holborn
+  street: University College London, Gower Street
   city: London
-  postcode: 'WC1V 6LJ'
+  postcode: 'WC1E 6BT'
   country: United Kingdom
   country_code: UK
 coordinates:
-  latitude: '51.5182'
-  longitude: '0.1181'
-appointment_url: 'https://calendly.com'
+  latitude: '51.5246'
+  longitude: '-0.1339'
+appointment_url: ''
 contact_links:
 #  - icon: comments
 #    icon_pack: fas
@@ -55,6 +55,13 @@ time_format: '3:04 PM'
 address_format: en-us
 
 # Site features
+
+features:
+  map:
+    provider: 'mapnik'
+    api_key: ''
+    zoom: 15
+
 
 highlight: false
 math: false
@@ -106,10 +113,6 @@ search:
     api_key: ''
     index_name: ''
     show_logo: false
-map:
-  provider: mapnik
-  api_key: ''
-  zoom: 15
 marketing:
   google_analytics: 'G-R7E6Y4LDPX'
   google_tag_manager: ''

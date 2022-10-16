@@ -39,7 +39,7 @@ education:
       year: 2007-2009
 superuser: false
 user_groups:
-  - Researchers
+  - Core
 highlight_name: true
 title: Mehran Azimbagirad
 email: ""
@@ -48,4 +48,3 @@ email: ""
 Mehran is a Postdoc fellow at University College London in the Center for Medical Image Computing working with Doctor Joseph Jacob on automated identification of early forms of interstitial lung disease in the SUMMIT lung cancer screening population.
 Before joining UCL, he was a postdoc researcher working on quantitative MRI on thigh muscle abnormality detection in university of Western Brittany, Brest, France.
 Mehran did his Ph.D. on MRI brain segmentation techniques at university of Sao Paulo advised by Professor Luiz Otavio Murta Junior.
-

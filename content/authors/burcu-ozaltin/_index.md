@@ -33,7 +33,7 @@ education:
       year: 2009
 superuser: false
 user_groups:
-  - Researchers
+  - Core
 highlight_name: true
 title: Burcu Ozaltin
 email: ""

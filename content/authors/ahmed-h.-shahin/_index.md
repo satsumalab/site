@@ -41,7 +41,7 @@ education:
       year: 2017
 superuser: false
 user_groups:
-  - Researchers
+  - Core
 highlight_name: true
 title: Ahmed H. Shahin
 email: ""

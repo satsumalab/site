@@ -1,5 +1,5 @@
 ---
-role: Research Fellow
+role: Former Research Fellow
 bio: Centre for Medical Image Computing & Department of Computer Science, University College London
 
 interests:
@@ -38,10 +38,8 @@ education:
       year: 2003
 superuser: false
 user_groups:
-  - Researchers
+  - Alumni
 highlight_name: true
 title: Tony Cheung
 email: ""
 ---
-
-Tony is currently a Research Fellow with the Centre of Medical Image Computing, University College London. He was a Postdoctoral Research Assistant with the School of Engineering and Materials Science, Queen Mary University of London.

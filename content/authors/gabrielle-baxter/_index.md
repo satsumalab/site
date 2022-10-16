@@ -36,7 +36,7 @@ education:
       year: 2016
 superuser: false
 user_groups:
-  - Researchers
+  - Core
 highlight_name: true
 title: Gabrielle Baxter
 email: ""
