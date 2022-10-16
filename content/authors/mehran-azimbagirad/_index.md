@@ -14,9 +14,6 @@ social:
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/mehran-azimbagirad-57a00148/
-  - icon: twitter
-    icon_pack: fab
-    link: https://twitter.com/
   - icon: google-scholar
     icon_pack: ai
     link: https://scholar.google.com.br/citations?user=VJ7aUDwAAAAJ&hl=en
