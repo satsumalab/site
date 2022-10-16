@@ -1,5 +1,5 @@
 ---
-role: Postdoctoral Researcher
+role: Former Postdoctoral Researcher
 bio: Centre for Medical Image Computing
 
 interests:
@@ -35,10 +35,8 @@ education:
       year: 2012
 superuser: false
 user_groups:
-  - Researchers
+  - Alumni
 highlight_name: true
 title: Eyjólfur Guðmundsson
 email: ""
 ---
-
-Postdoctoral researcher at UCL's Centre for Medical Image Computing with Dr Joe Jacob's Satsuma Lab. Working on image analysis and modelling of interstitial lung disease on computed tomography scans. Prior work includes deep learning-based image analysis of malignant pleural mesothelioma with Dr Sam Armato at the University of Chicago.

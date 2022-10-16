@@ -29,7 +29,7 @@ education:
       year: 1994
 superuser: false
 user_groups:
-  - Researchers
+  - Core
 highlight_name: false
 title: John Mccabe
 email: ""
