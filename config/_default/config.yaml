@@ -26,6 +26,9 @@ module:
     - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-netlify
     - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy-plugin-reveal
     - path: github.com/wowchemy/wowchemy-hugo-themes/modules/wowchemy/v5
+  hugoVersion:
+    min: '0.101.0'
+    extended: true
 
 ############################
 ## ADVANCED
