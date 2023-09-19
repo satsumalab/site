@@ -1,5 +1,5 @@
 ---
-role: PhD Student
+role: Former PhD Student
 bio: i4health
 
 interests:
@@ -35,7 +35,7 @@ education:
       year: 2017
 superuser: false
 user_groups:
-  - Core
+  - Alumni
 highlight_name: true
 title: Mou-Cheng Xu
 email: ""
