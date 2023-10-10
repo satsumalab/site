@@ -22,8 +22,8 @@ tags:
 - saliency map
 
 categories: []
-date: '2022-01-13'
-lastmod: 2022-01-13T00:00:00Z
+date: '2022-03-24'
+lastmod: 2022-03-24T00:00:00Z
 featured: false
 draft: false
 
@@ -41,12 +41,12 @@ image:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects: []
-publishDate: '2022-01-13T00:00:00Z'
+publishDate: '2022-03-24T00:00:00Z'
 publication_types:
-- '3'
+- '2'
 abstract: 'In this study, the long-term mortality in the National Lung Screening Trial (NLST) was investigated using a deep learning-based method. Binary classification of the non-lung-cancer mortality (i.e. cardiovascular and respiratory mortality) was performed using neural network models centered around a 3D-ResNet. The models were trained on a participant age, gender, and smoking history matched cohort. Utilising both the 3D CT scan and clinical information, the models can achieve an AUC of 0.73 which outperforms humans at cardiovascular mortality prediction. By interpreting the trained models with 3D saliency maps, we examined the features on the CT scans that correspond to the mortality signal. The saliency maps can potentially assist the clinicians’ and radiologists’ to identify regions of concern on the image that may indicate the need to adopt preventative healthcare management strategies to prolong the patients’ life expectancy.'
-publication: '*medRxiv*'
-url_pdf: https://www.medrxiv.org/content/10.1101/2022.01.12.22269152v1
+publication: 'IEEE Access'
+url_pdf: https://ieeexplore.ieee.org/document/9740694
 #url_code: 'https://github.com/
 
 ---
