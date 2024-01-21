@@ -9,7 +9,7 @@ authors:
 - Yaozhi Lu
 - Shahab Aslani
 - An Zhao
-- Ahmed Shahin
+- Ahmed H. Shahin
 - David Barber
 - Mark Emberton
 - Daniel C. Alexander
