@@ -1,9 +1,9 @@
-    ---
-    role: PhD Student
-    bio: Niccolò is a PhD student on the AI enabled Healthcare CDT at University College London. His research focuses on developing a deep learning foundation model for lung cancer screening.
-    interests:
-      - Deep Learning
-      - Medical Image Analysis
+---
+role: PhD Student
+bio: Niccolò is a PhD student on the AI enabled Healthcare CDT at University College London. His research focuses on developing a deep learning foundation model for lung cancer screening.
+interests:
+  - Deep Learning
+  - Medical Image Analysis
 social:
   - icon: envelope
     icon_pack: fas
