@@ -1,10 +1,10 @@
-    ---
-    role: Research Fellow
-    bio: Adam is a Research Fellow primarily working on identifying the origins of lung infections through the analysis of CT imaging data. Before joining Satsuma group, Adam focused on developing machine learning methods applicable to image analysis for adaptive radiotherapy, including unsupervised oragns at risk segmentation and synthetic CT generation from Cone Beam CTs. Adam holds a DPhil from the University of Oxford, where he conducted research on applications of supervoxels in lung image analysis for lung cancer patients, including multimodal deformable image registration and estimation of lung ventilation.
-    interests:
-      - Machine Learning
-      - Medical Image Analysis
-      - Deformable Image Registration
+---
+role: Research Fellow
+bio: Adam is a Research Fellow primarily working on identifying the origins of lung infections through the analysis of CT imaging data. Before joining Satsuma group, Adam focused on developing machine learning methods applicable to image analysis for adaptive radiotherapy, including unsupervised oragns at risk segmentation and synthetic CT generation from Cone Beam CTs. Adam holds a DPhil from the University of Oxford, where he conducted research on applications of supervoxels in lung image analysis for lung cancer patients, including multimodal deformable image registration and estimation of lung ventilation.
+interests:
+  - Machine Learning
+  - Medical Image Analysis
+  - Deformable Image Registration
 
 social:
   - icon: envelope
