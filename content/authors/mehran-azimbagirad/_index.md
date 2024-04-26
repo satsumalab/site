@@ -26,6 +26,9 @@ organizations:
 education:
   courses:
     - course: Postdoc in Medical Image Processing
+      institution: University College London, United Kingdom
+      year: 2022-2026
+    - course: Postdoc in Medical Image Processing
       institution: University Western Brittany, France
       year: 2020-2022
     - course: PhD in Applied Physics in Medicine and Biology
