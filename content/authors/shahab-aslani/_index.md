@@ -1,5 +1,5 @@
 ---
-role: Postdoctoral Researcher
+role: Senior Research Fellow
 bio: Centre for Medical Image Computing
 
 interests:
