@@ -42,6 +42,6 @@ title: Shahab Aslani
 email: ""
 ---
 
-Shahab is a Postdoc fellow at University College London in the Center for Medical Image Computing working with Doctor Joseph Jacob on early lung cancer prediction.
-Before joining UCL, he was a visiting researcher at the MIA Research group in the CS department of the Simon Fraser University working with Professor Ghassan Hamarneh on brain image analysis.
-Shahab did his Ph.D. on analyzing MRI brain images of Multiple Sclerosis at the Italian Institute of Technology where he was advised by Professor Vittorio Murino and Doctor Diego Sona.
+Shahab is a Senior Research Fellow at University College London in the Center for Medical Image Computing, working with Doctor Joseph Jacob on early lung disease prediction.
+Before joining UCL, he was a visiting researcher at the MIA Research group in the CS department of Simon Fraser University, working with Professor Ghassan Hamarneh on brain image analysis.
+Shahab did his PhD on analyzing MRI brain images of Multiple Sclerosis at the Italian Institute of Technology, where he was advised by Professor Vittorio Murino and Doctor Diego Sona.
