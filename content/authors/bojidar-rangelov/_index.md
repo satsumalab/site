@@ -1,5 +1,5 @@
 ---
-role: PhD Student
+role: Former PhD Student
 bio: i4health (iCASE)
 
 interests:
@@ -37,7 +37,7 @@ education:
       year: 2016
 superuser: false
 user_groups:
-  - Core
+  - Alumni
 highlight_name: true
 title: Bojidar Rangelov
 email: ""
