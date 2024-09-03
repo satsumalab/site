@@ -1,5 +1,5 @@
 ---
-role: PhD Student
+role: Former PhD Student
 bio: University College London
 
 interests:
@@ -29,10 +29,10 @@ education:
       year: 2014
 superuser: false
 user_groups:
-  - Core
+  - Alumni
 highlight_name: true
 title: An Zhao
 email: ""
 ---
 
-An is a PhD student in the <a href="https://www.ucl.ac.uk/computer-science/" target="_blank" rel="noopener">Department of Computer Science</a> at UCL. Her current research focuses on developing and exploiting advanced machine learning methods to achieve accurate prognosis prediction of idiopathic pulmonary fibrosis (IPF) patients, offer a better understanding of disease progression and facilitate monitoring of therapeutic response.
+An was PhD student in the <a href="https://www.ucl.ac.uk/computer-science/" target="_blank" rel="noopener">Department of Computer Science</a> at UCL. Her current research focuses on developing and exploiting advanced machine learning methods to achieve accurate prognosis prediction of idiopathic pulmonary fibrosis (IPF) patients, offer a better understanding of disease progression and facilitate monitoring of therapeutic response.
