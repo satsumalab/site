@@ -1,5 +1,5 @@
 ---
-role: Research Assistant
+role: Former Research Assistant
 bio:
 
 interests:
@@ -33,7 +33,7 @@ education:
       year: 2009
 superuser: false
 user_groups:
-  - Core
+  - Alumni
 highlight_name: true
 title: Burcu Ozaltin
 email: ""
