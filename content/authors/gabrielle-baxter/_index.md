@@ -1,5 +1,5 @@
 ---
-role: Postdoctoral Researcher
+role: Former Postdoctoral Researcher
 bio: Centre for Medical Image Computing
 
 interests:
@@ -36,7 +36,7 @@ education:
       year: 2016
 superuser: false
 user_groups:
-  - Core
+  - Alumni
 highlight_name: true
 title: Gabrielle Baxter
 email: ""
