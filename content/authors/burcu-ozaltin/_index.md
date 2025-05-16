@@ -1,5 +1,5 @@
 ---
-role: Former Research Assistant
+role: Former Research Fellow
 bio:
 
 interests:
