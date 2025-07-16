@@ -1,5 +1,5 @@
 ---
-role: Research Fellow
+role: Former Research Fellow
 bio: Centre for Medical Image Computing
 
 interests:
@@ -33,7 +33,7 @@ education:
       year: 2014
 superuser: false
 user_groups:
-  - Core
+  - Alumni
 highlight_name: true
 title: Yaozhi Lu
 email: ""
