@@ -1,5 +1,5 @@
 ---
-role: PhD Student
+role: Former PhD Student
 bio: University College London
 
 interests:
@@ -41,7 +41,7 @@ education:
       year: 2017
 superuser: false
 user_groups:
-  - Core
+  - Alumni
 highlight_name: true
 title: Ahmed H. Shahin
 email: ""
