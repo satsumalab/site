@@ -1,5 +1,5 @@
 ---
-role: Research Associate
+role: Research Fellow
 bio: University College London
 interests:
   - Diagnostic imaging
