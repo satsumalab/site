@@ -18,6 +18,7 @@ content:
   user_groups:
   - Principal Investigator
   - Core
+  - Advisors
   - Administrators
   - Visitors
   - Alumni
