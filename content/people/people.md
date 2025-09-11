@@ -18,10 +18,10 @@ content:
   user_groups:
   - Principal Investigator
   - Core
-  - Advisors
   - Administrators
   - Visitors
   - Alumni
+  - Advisors
 design:
   show_interests: false
   show_role: true
