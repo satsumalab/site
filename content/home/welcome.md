@@ -18,4 +18,4 @@ design:
 
 <br>
 
-Based at the [Centre for Medical Image Computing (CMIC)](https://www.ucl.ac.uk/medical-image-computing/) at [University College London (UCL)](https://www.ucl.ac.uk/). Established in 2018.
+Based at the [Hawkes Institute](https://www.ucl.ac.uk/medical-image-computing/) - [University College London (UCL)](https://www.ucl.ac.uk/). Established in 2018.

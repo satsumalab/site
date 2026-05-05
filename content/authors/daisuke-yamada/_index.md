@@ -27,7 +27,7 @@ education:
       
 superuser: false
 user_groups:
-  - Core
+  - Alumni
 highlight_name: true
 title: Daisuke Yamada
 email: ""

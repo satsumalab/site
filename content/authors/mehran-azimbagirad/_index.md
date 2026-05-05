@@ -39,7 +39,7 @@ education:
       year: 2007-2009
 superuser: false
 user_groups:
-  - Core
+  - Alumni
 highlight_name: true
 title: Mehran Azimbagirad
 email: ""
