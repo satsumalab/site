@@ -38,7 +38,7 @@ featured: false
 draft: false
 
 image:
-  caption: ''
+  caption: 'Adjusted mortality risk within PRISm according to CT-derived total lung volume (Figure 4)'
   focal_point: ''
   preview_only: false
 
