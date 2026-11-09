@@ -1,10 +1,9 @@
 ---
-role: NIHR Doctoral Fellow
+role: PhD Student
 bio: Hawkes Institute & UCL Respiratory
 
 interests:
   - Multi-morbidity in chronic respiratory diseases
-  - Idiopathic pulmonary fibrosis and COPD
   - Cardiopulmonary outcomes
   - CT imaging biomarkers and prediction models
 social:
