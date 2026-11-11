@@ -7,7 +7,7 @@
   <div class="sx-hero__text">
     {{ with $page.Params.eyebrow }}<p class="sx-eyebrow">{{ . | markdownify }}</p>{{ end }}
     <h1 class="sx-hero__title">{{ $page.Title | markdownify }}</h1>
-    {{ with $page.Params.tagline }}<p class="sx-hero__tagline">{{ . | markdownify }}</p>{{ end }}
+    {{ with $page.Params.tagline }}<p class="sx-hero__tagline"><span>{{ . | markdownify }}</span></p>{{ end }}
     {{ with $page.Content }}<div class="sx-hero__lead">{{ . }}</div>{{ end }}
 
     {{ if or $page.Params.cta.url $page.Params.cta_alt.url }}
@@ -23,13 +23,14 @@
     {{ $image := resources.Get (path.Join "media" .) }}
     {{ if $image }}
       {{ if eq $image.MediaType.SubType "svg" }}
-        {{ $image.Content | safeHTML }}
+        {{/* Drop the export's <title> so the decorative SVG shows no hover tooltip. */}}
+        {{ $image.Content | replaceRE "<title>[^<]*</title>" "" | safeHTML }}
       {{ else }}
-        {{ $img := $image.Resize "900x webp" }}
+        {{/* WebP at most 1600 px wide (the hero shows ~720 CSS px, so this covers 2x screens); never upscaled. */}}
+        {{ $img := $image.Resize (printf "%dx webp" (cond (gt $image.Width 1600) 1600 $image.Width)) }}
         <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="">
       {{ end }}
     {{ end }}
-    <span class="sx-scanline"></span>
   </div>
   {{ end }}
 </div>

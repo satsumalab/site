@@ -7,9 +7,9 @@ weight: 10
 title: "Satsuma Lab"
 eyebrow: "Lung & Heart Imaging · UCL Hawkes Institute"
 tagline: "Turning chest CT into measurements that change patient care."
-# hero_media: an SVG in assets/media/ is inlined (so it can be animated); PNG/JPG also work.
+# hero_media: an image in assets/media/ (PNG with transparency fades into the page); SVGs are inlined.
 # Source artwork for SVGs lives in design/ as editable .ai files.
-hero_media: welcome.png
+hero_media: hero-lung.png
 cta:
   label: "Our research"
   url: "#research"
@@ -20,4 +20,4 @@ design:
   columns: '1'
 ---
 
-We build quantitative imaging and machine-learning methods for lung cancer screening, fibrotic lung disease and cardiothoracic imaging, based at the [Hawkes Institute](https://www.ucl.ac.uk/medical-image-computing/), [University College London](https://www.ucl.ac.uk/).
+We build quantitative imaging and machine-learning methods for lung cancer screening, fibrotic lung disease and cardiothoracic imaging, based at the [Hawkes Institute](https://www.ucl.ac.uk/hawkes-institute), [University College London](https://www.ucl.ac.uk/).

@@ -1,0 +1,6 @@
+# Local `hugo server` only (the "development" environment): stop browsers caching pages and the
+# unfingerprinted CSS, so style changes show up on a normal reload.
+headers:
+  - for: /**
+    values:
+      Cache-Control: no-store

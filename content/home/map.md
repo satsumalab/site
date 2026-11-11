@@ -1,4 +1,5 @@
 ---
+active: false  # map section hidden; the address is in the footer
 widget: contact
 headless: true  # This file represents a page section.
 
