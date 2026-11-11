@@ -1,6 +1,6 @@
 ---
 title: Publications
-view: 3
+view: satsuma_pub
 columns: '1'
 flip_alt_rows: true
 

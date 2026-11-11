@@ -1,0 +1,17 @@
+# Satsuma colour theme: graphite base with the logo's orange / amber / grey voxels.
+name = "Satsuma"
+
+[light]
+  primary = "#d97400"
+
+[dark]
+  primary = "#f28c00"
+  background = "#0b0d10"
+  home_section_odd = "#0b0d10"
+  home_section_even = "#0b0d10"
+  link = "#f6a23a"
+  link_hover = "#fcd34d"
+  menu_primary = "rgba(11, 13, 16, 0.82)"
+  menu_text = "#c4cad1"
+  menu_text_active = "#f28c00"
+  menu_title = "#ffffff"

@@ -1,0 +1,19 @@
+{{/* Satsuma publication row: year | title, authors, venue, links | fitted figure thumbnail.
+     Used by content/publication/_index.md (`view: satsuma_pub`). */}}
+{{ $item := .item }}
+{{ $link := $item.Params.external_link | default $item.RelPermalink }}
+{{ $img := ($item.Resources.ByType "image").GetMatch "*featured*" }}
+
+<article class="sx-pub">
+  <time class="sx-pub__year" datetime="{{ $item.Date.Format "2006-01-02" }}">{{ $item.Date.Format "2006" }}</time>
+  <div class="sx-pub__main">
+    <h2 class="sx-pub__title"><a href="{{ $link }}">{{ $item.Title | markdownify }}</a></h2>
+    <div class="sx-pub__authors">{{ partial "page_metadata_authors" $item }}</div>
+    {{ with $item.Params.publication_short | default $item.Params.publication }}<div class="sx-pub__venue">{{ . | markdownify }}</div>{{ end }}
+    <div class="btn-links sx-pub__links">{{ partial "page_links" (dict "page" $item "is_list" 1) }}</div>
+  </div>
+  {{ with $img }}
+    {{ $thumb := .Fit "320x200 webp" }}
+    <a class="sx-pub__thumb" href="{{ $link }}" tabindex="-1" aria-hidden="true"><img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="" loading="lazy"></a>
+  {{ end }}
+</article>

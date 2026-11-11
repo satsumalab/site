@@ -1,0 +1,46 @@
+{{/* Satsuma hero: overrides the Wowchemy hero widget.
+     Front matter (content/home/welcome.md): title, eyebrow, tagline, body text, cta, cta_alt,
+     established, hero_media (SVG files are inlined so CSS can animate them). */}}
+{{ $page := .page }}
+
+{{ $pubs := where site.RegularPages "Section" "publication" }}
+{{ $team := where (where site.Pages "Section" "authors") ".Params.user_groups" "intersect" (slice "Principal Investigator" "Core") }}
+{{ $news := where site.RegularPages "Section" "post" }}
+
+<div class="sx-hero">
+  <div class="sx-hero__text">
+    {{ with $page.Params.eyebrow }}<p class="sx-eyebrow">{{ . | markdownify }}</p>{{ end }}
+    <h1 class="sx-hero__title">{{ $page.Title | markdownify }}</h1>
+    {{ with $page.Params.tagline }}<p class="sx-hero__tagline">{{ . | markdownify }}</p>{{ end }}
+    {{ with $page.Content }}<div class="sx-hero__lead">{{ . }}</div>{{ end }}
+
+    {{ if or $page.Params.cta.url $page.Params.cta_alt.url }}
+    <p class="sx-hero__ctas">
+      {{ with $page.Params.cta }}{{ if .url }}<a class="sx-btn sx-btn--primary" href="{{ .url | relLangURL }}">{{ .label | markdownify }}</a>{{ end }}{{ end }}
+      {{ with $page.Params.cta_alt }}{{ if .url }}<a class="sx-btn sx-btn--ghost" href="{{ .url | relLangURL }}">{{ .label | markdownify }}</a>{{ end }}{{ end }}
+    </p>
+    {{ end }}
+
+    <dl class="sx-stats">
+      <div><dt>Publications</dt><dd>{{ len $pubs }}</dd></div>
+      <div><dt>Researchers</dt><dd>{{ len $team }}</dd></div>
+      <div><dt>News items</dt><dd>{{ len $news }}</dd></div>
+      {{ with $page.Params.established }}<div><dt>Established</dt><dd>{{ . }}</dd></div>{{ end }}
+    </dl>
+  </div>
+
+  {{ with $page.Params.hero_media }}
+  <div class="sx-hero__media" aria-hidden="true">
+    {{ $image := resources.Get (path.Join "media" .) }}
+    {{ if $image }}
+      {{ if eq $image.MediaType.SubType "svg" }}
+        {{ $image.Content | safeHTML }}
+      {{ else }}
+        {{ $img := $image.Resize "900x webp" }}
+        <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="">
+      {{ end }}
+    {{ end }}
+    <span class="sx-scanline"></span>
+  </div>
+  {{ end }}
+</div>

@@ -1,21 +1,24 @@
 ---
-# A Demo section created with the Blank widget.
-# Any elements can be added in the body: https://wowchemy.com/docs/writing-markdown-latex/
-# Add more sections by duplicating this file and customizing to your requirements.
+# Homepage hero. Copy is a draft for the redesign proposal - edit freely.
 active: true
-widget: hero  # See https://wowchemy.com/docs/page-builder/
-headless: true  # This file represents a page section.
-weight: 10  # Order that this section will appear.
+widget: hero
+headless: true
+weight: 10
 title: "Satsuma Lab"
+eyebrow: "Lung & Heart Imaging · UCL Hawkes Institute"
+tagline: "Turning chest CT into measurements that change patient care."
+established: 2018
+# hero_media: an SVG in assets/media/ is inlined (so it can be animated); PNG/JPG also work.
+# Source artwork for SVGs lives in design/ as editable .ai files.
 hero_media: welcome.png
+cta:
+  label: "Our research"
+  url: "#research"
+cta_alt:
+  label: "Publications"
+  url: "publication/"
 design:
-  # Choose how many columns the section has. Valid values: 1 or 2.
   columns: '1'
-  # Add custom styles
-  css_style:
-  css_class:
 ---
 
-<br>
-
-Based at the [Hawkes Institute](https://www.ucl.ac.uk/medical-image-computing/) - [University College London (UCL)](https://www.ucl.ac.uk/). Established in 2018.
+We build quantitative imaging and machine-learning methods for lung cancer screening, fibrotic lung disease and cardiothoracic imaging, based at the [Hawkes Institute](https://www.ucl.ac.uk/medical-image-computing/), [University College London](https://www.ucl.ac.uk/).

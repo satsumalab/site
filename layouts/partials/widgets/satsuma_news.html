@@ -1,0 +1,36 @@
+{{/* Satsuma news: latest post featured with its image, the next few as a compact list. */}}
+{{ $page := .page }}
+{{ $count := $page.Params.content.count | default 4 }}
+{{ $items := first $count (where site.RegularPages "Section" "post").ByDate.Reverse }}
+
+<div class="section-heading sx-heading">
+  <h1>{{ $page.Title | markdownify }}</h1>
+  <p><a class="sx-more" href="{{ "post/" | relLangURL }}">All news <span aria-hidden="true">→</span></a></p>
+</div>
+
+<div class="sx-news">
+  {{ range $i, $item := $items }}
+    {{ $img := ($item.Resources.ByType "image").GetMatch "*featured*" }}
+    {{ $link := $item.Params.external_link | default $item.RelPermalink }}
+    {{ if eq $i 0 }}
+    <article class="sx-news__lead">
+      {{ with $img }}
+        {{ $thumb := .Fit "960x560 webp" }}
+        <a class="sx-news__img" href="{{ $link }}"><img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="" loading="lazy"></a>
+      {{ end }}
+      <div class="sx-news__body">
+        <time class="sx-mono" datetime="{{ $item.Date.Format "2006-01-02" }}">{{ $item.Date.Format "2006-01-02" }}</time>
+        <h2><a href="{{ $link }}">{{ $item.Title | markdownify }}</a></h2>
+        {{ with $item.Params.summary | default $item.Summary }}<p>{{ . | plainify | truncate 220 }}</p>{{ end }}
+      </div>
+    </article>
+    <ul class="sx-news__list">
+    {{ else }}
+      <li>
+        <time class="sx-mono" datetime="{{ $item.Date.Format "2006-01-02" }}">{{ $item.Date.Format "2006-01-02" }}</time>
+        <a href="{{ $link }}">{{ $item.Title | markdownify }}</a>
+      </li>
+    {{ end }}
+  {{ end }}
+  {{ if $items }}</ul>{{ end }}
+</div>
