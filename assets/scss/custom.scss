@@ -19,7 +19,7 @@
   --sx-leaf: #86c343;
   --sx-font-head: "Space Grotesk", system-ui, sans-serif;
   --sx-font-body: "Inter", system-ui, sans-serif;
-  --sx-font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --sx-font-label: "IBM Plex Sans", system-ui, sans-serif;  // small caps labels, nav, dates
   --sx-radius: 2px;
   --sx-grid: 32px;
 }
@@ -45,7 +45,7 @@ body.dark ::selection { background: var(--sx-orange); color: #000; }
 body.dark a { text-decoration: none; }
 
 .sx-mono {
-  font-family: var(--sx-font-mono);
+  font-family: var(--sx-font-label);
   font-size: 0.8rem;
   letter-spacing: 0.04em;
   color: var(--sx-muted);
@@ -85,7 +85,7 @@ body.dark .navbar {
 .navbar-brand img { height: 38px; width: auto; transform: translateY(-6px); }
 
 body.dark .navbar .nav-link {
-  font-family: var(--sx-font-mono);
+  font-family: var(--sx-font-label);
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -124,7 +124,7 @@ body.dark .section-heading h1 {
 .sx-heading p,
 body.dark .section-heading p {
   margin: 0;
-  font-family: var(--sx-font-mono);
+  font-family: var(--sx-font-label);
   font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -141,7 +141,7 @@ body.dark .section-heading p {
   align-items: center;
   gap: 0.5rem;
   padding: 0.8rem 1.4rem;
-  font-family: var(--sx-font-mono);
+  font-family: var(--sx-font-label);
   font-size: 0.8rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -187,7 +187,7 @@ body.dark .section-heading p {
 .sx-hero__text { position: relative; z-index: 1; padding-bottom: 3.5rem; align-self: start; }
 
 .sx-eyebrow {
-  font-family: var(--sx-font-mono);
+  font-family: var(--sx-font-label);
   font-size: 0.78rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -213,17 +213,24 @@ body.dark .section-heading p {
   margin-bottom: 1.25rem;
 }
 
-.sx-hero__tagline span,
+.sx-hero__tagline,
+.sx-hero__lead { position: relative; }
+
+// Band layer: same text, same wrapping, transparent ink; one opacity for the whole group.
+.sx-band { position: absolute; inset: 0; pointer-events: none; color: transparent; }
+.sx-band * { color: transparent !important; border-color: transparent !important; }
+.sx-band-text { position: relative; }
+.sx-hero__tagline .sx-band { opacity: 0.85; }
+.sx-hero__lead .sx-band { opacity: 0.7; }
+
+.sx-hero__tagline .sx-hl,
 .sx-hero__lead p {
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
 
-.sx-hero__tagline span {
-  background: var(--sx-orange);
-  color: var(--sx-bg);
-  padding: 0.04em 0.3em;
-}
+.sx-hero__tagline .sx-hl { padding: 0.04em 0.3em; color: var(--sx-bg); }
+.sx-hero__tagline .sx-band .sx-hl { background: var(--sx-orange); }
 
 .sx-hero__lead {
   max-width: 34em;
@@ -231,12 +238,8 @@ body.dark .section-heading p {
   line-height: 1.5;
 }
 
-.sx-hero__lead p {
-  display: inline;
-  background: #000;
-  color: #c3c9d0;
-  padding: 0.18em 0.5em;
-}
+.sx-hero__lead p { display: inline; padding: 0.18em 0.5em; color: #c3c9d0; }
+.sx-hero__lead .sx-band p { background: #000; }
 
 .sx-hero__lead a { color: var(--sx-text); border-bottom: 1px solid var(--sx-line-strong); }
 .sx-hero__lead a:hover { color: var(--sx-orange); border-color: var(--sx-orange); }
@@ -286,7 +289,7 @@ body.dark .section-heading p {
 .sx-theme__text { color: var(--sx-muted); font-size: 0.95rem; line-height: 1.6; flex: 1; }
 
 .sx-theme__link {
-  font-family: var(--sx-font-mono);
+  font-family: var(--sx-font-label);
   font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -346,7 +349,7 @@ body.dark .section-heading p {
 .sx-group { margin-bottom: 3.5rem; }
 
 .sx-group__title {
-  font-family: var(--sx-font-mono) !important;
+  font-family: var(--sx-font-label) !important;
   font-size: 0.8rem !important;
   font-weight: 400;
   letter-spacing: 0.12em;
@@ -421,7 +424,7 @@ body.dark .section-heading p {
 .sx-person__name:hover { color: var(--sx-orange) !important; }
 
 .sx-person__role {
-  font-family: var(--sx-font-mono);
+  font-family: var(--sx-font-label);
   font-size: 0.7rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -465,11 +468,11 @@ body.dark .card {
 body.dark .card-simple:hover { border-color: var(--sx-line-strong); }
 
 body.dark .article-metadata,
-body.dark .pub-list-item .article-metadata { font-family: var(--sx-font-mono); font-size: 0.72rem; color: var(--sx-muted); }
+body.dark .pub-list-item .article-metadata { font-family: var(--sx-font-label); font-size: 0.72rem; color: var(--sx-muted); }
 
 body.dark .btn-outline-primary,
 body.dark .btn-page-header {
-  font-family: var(--sx-font-mono);
+  font-family: var(--sx-font-label);
   font-size: 0.72rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -487,7 +490,7 @@ body.dark .custom-select {
   border: 1px solid var(--sx-line-strong);
   border-radius: var(--sx-radius);
   color: var(--sx-text);
-  font-family: var(--sx-font-mono);
+  font-family: var(--sx-font-label);
   font-size: 0.8rem;
 }
 
@@ -512,10 +515,10 @@ body.dark .page-footer { border-top: 1px solid var(--sx-line); background: trans
 
 body.dark .sx-footer p { text-align: left; font-family: var(--sx-font-body); font-size: 0.9rem; letter-spacing: 0; color: var(--sx-muted); margin: 0 0 0.9rem; line-height: 1.55; }
 body.dark .sx-footer .sx-footer__blurb { color: var(--sx-text); max-width: 26em; }
-.sx-footer__contact span { font-family: var(--sx-font-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sx-faint); margin-right: 0.5em; }
+.sx-footer__contact span { font-family: var(--sx-font-label); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sx-faint); margin-right: 0.5em; }
 
 .sx-footer__title {
-  font-family: var(--sx-font-mono);
+  font-family: var(--sx-font-label);
   font-size: 0.72rem !important;
   font-weight: 500;
   letter-spacing: 0.14em;
@@ -542,7 +545,7 @@ body.dark .sx-footer .sx-footer__col a:hover { color: var(--sx-orange); }
   border-top: 1px solid var(--sx-line);
 }
 
-body.dark .sx-footer .sx-footer__legal { font-family: var(--sx-font-mono); font-size: 0.72rem; letter-spacing: 0.04em; color: var(--sx-faint); margin: 0; }
+body.dark .sx-footer .sx-footer__legal { font-family: var(--sx-font-label); font-size: 0.72rem; letter-spacing: 0.04em; color: var(--sx-faint); margin: 0; }
 body.dark .sx-footer .sx-footer__legal a { color: var(--sx-muted); }
 
 // Clear space: at least the width of the L's stem round the logo; the padding gives that and more.
@@ -594,7 +597,7 @@ body.dark .sx-footer a.sx-footer__ucl { display: inline-flex; padding: 6px; bord
 }
 
 .sx-pub__year {
-  font-family: var(--sx-font-mono);
+  font-family: var(--sx-font-label);
   font-size: 0.85rem;
   color: var(--sx-orange);
   padding-top: 0.2rem;
@@ -609,7 +612,7 @@ body.dark .sx-footer a.sx-footer__ucl { display: inline-flex; padding: 6px; bord
 .sx-pub__authors span { font-size: 0.85rem; color: var(--sx-muted) !important; line-height: 1.5; }
 .sx-pub__authors .author-highlighted { color: var(--sx-text) !important; font-weight: 600; }
 
-.sx-pub__venue { font-family: var(--sx-font-mono); font-size: 0.75rem; letter-spacing: 0.02em; color: var(--sx-faint); margin-top: 0.35rem; }
+.sx-pub__venue { font-family: var(--sx-font-label); font-size: 0.75rem; letter-spacing: 0.02em; color: var(--sx-faint); margin-top: 0.35rem; }
 .sx-pub__venue em { font-style: normal; }
 .sx-pub__links { margin-top: 0.9rem; }
 .sx-pub__links .btn { padding: 0.25rem 0.6rem; margin: 0 0.35rem 0.35rem 0; }

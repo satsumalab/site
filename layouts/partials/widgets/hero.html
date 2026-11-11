@@ -7,8 +7,20 @@
   <div class="sx-hero__text">
     {{ with $page.Params.eyebrow }}<p class="sx-eyebrow">{{ . | markdownify }}</p>{{ end }}
     <h1 class="sx-hero__title">{{ $page.Title | markdownify }}</h1>
-    {{ with $page.Params.tagline }}<p class="sx-hero__tagline"><span>{{ . | markdownify }}</span></p>{{ end }}
-    {{ with $page.Content }}<div class="sx-hero__lead">{{ . }}</div>{{ end }}
+    {{/* Tagline and lead sit on see-through highlight bands. The bands are a hidden copy of the text in a group
+         with one opacity (so overlapping line bands don't show darker seams); the readable text is laid on top. */}}
+    {{ with $page.Params.tagline }}
+    <p class="sx-hero__tagline">
+      <span class="sx-band" aria-hidden="true" inert><span class="sx-hl">{{ . | markdownify }}</span></span>
+      <span class="sx-band-text"><span class="sx-hl">{{ . | markdownify }}</span></span>
+    </p>
+    {{ end }}
+    {{ with $page.Content }}
+    <div class="sx-hero__lead">
+      <div class="sx-band" aria-hidden="true" inert>{{ . }}</div>
+      <div class="sx-band-text">{{ . }}</div>
+    </div>
+    {{ end }}
 
     {{ if or $page.Params.cta.url $page.Params.cta_alt.url }}
     <p class="sx-hero__ctas">
