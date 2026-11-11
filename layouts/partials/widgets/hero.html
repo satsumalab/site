@@ -1,26 +1,37 @@
 {{/* Satsuma hero: overrides the Wowchemy hero widget.
-     Front matter (content/home/welcome.md): title, eyebrow, tagline, body text, cta, cta_alt,
-     hero_media (SVG files are inlined so CSS can animate them). */}}
+     Front matter (content/home/welcome.md): title, eyebrow, tagline, body text, cta, cta_alt, and either
+       hero_slides: a list of {image, fill, align, scale, credit}. Images live in assets/media/. Cut-outs (transparent PNGs)
+         stand on the bottom line beside the text (`align: start | center | end` moves one along the line; `scale: 0.9` shrinks it);
+         `fill: true` covers the whole hero behind the text instead; `credit` is shown while it is on screen.
+         Two or more slides crossfade every 9 s (no autoplay for reduced-motion users; the indicators still work).
+       hero_media: a single image (an SVG is inlined).
+     Eyebrow, title, tagline and lead sit on see-through highlight bands (elements marked data-band): a script
+     right after the text adds a hidden copy of each one, drawn with one opacity under the real text, so overlapping
+     line bands show no seams and the page text itself appears only once. */}}
 {{ $page := .page }}
+{{ $slides := slice }}
+{{ with $page.Params.hero_slides }}{{ $slides = . }}{{ else }}{{ with $page.Params.hero_media }}{{ $slides = slice (dict "image" .) }}{{ end }}{{ end }}
+{{ $carousel := gt (len $slides) 1 }}
 
-<div class="sx-hero">
+<div class="sx-hero{{ if $carousel }} sx-hero--carousel{{ end }}">
+  {{/* Full-width slides: one layer behind everything. */}}
+  {{ $fills := where $slides "fill" true }}
+  {{ if $fills }}
+  <div class="sx-hero__fill" aria-hidden="true">
+    {{ range $i, $s := $slides }}{{ if $s.fill }}
+    {{ with resources.Get (path.Join "media" $s.image) }}
+    {{ $img := .Resize (printf "%dx webp q80" (cond (gt .Width 2400) 2400 .Width)) }}
+    <img src="{{ $img.RelPermalink }}" alt="" data-slide="{{ $i }}"{{ if eq $i 0 }} class="is-active"{{ else }} loading="lazy"{{ end }}>
+    {{ end }}
+    {{ end }}{{ end }}
+  </div>
+  {{ end }}
+
   <div class="sx-hero__text">
-    {{ with $page.Params.eyebrow }}<p class="sx-eyebrow">{{ . | markdownify }}</p>{{ end }}
-    <h1 class="sx-hero__title">{{ $page.Title | markdownify }}</h1>
-    {{/* Tagline and lead sit on see-through highlight bands. The bands are a hidden copy of the text in a group
-         with one opacity (so overlapping line bands don't show darker seams); the readable text is laid on top. */}}
-    {{ with $page.Params.tagline }}
-    <p class="sx-hero__tagline">
-      <span class="sx-band" aria-hidden="true" inert><span class="sx-hl">{{ . | markdownify }}</span></span>
-      <span class="sx-band-text"><span class="sx-hl">{{ . | markdownify }}</span></span>
-    </p>
-    {{ end }}
-    {{ with $page.Content }}
-    <div class="sx-hero__lead">
-      <div class="sx-band" aria-hidden="true" inert>{{ . }}</div>
-      <div class="sx-band-text">{{ . }}</div>
-    </div>
-    {{ end }}
+    {{ with $page.Params.eyebrow }}<p class="sx-eyebrow" data-band><span class="sx-hl">{{ . | markdownify }}</span></p>{{ end }}
+    <h1 class="sx-hero__title" data-band><span class="sx-hl">{{ $page.Title | markdownify }}</span></h1>
+    {{ with $page.Params.tagline }}<p class="sx-hero__tagline" data-band><span class="sx-hl">{{ . | markdownify }}</span></p>{{ end }}
+    {{ with $page.Content }}<div class="sx-hero__lead" data-band>{{ . }}</div>{{ end }}
 
     {{ if or $page.Params.cta.url $page.Params.cta_alt.url }}
     <p class="sx-hero__ctas">
@@ -28,21 +39,94 @@
       {{ with $page.Params.cta_alt }}{{ if .url }}<a class="sx-btn sx-btn--ghost" href="{{ .url | relLangURL }}">{{ .label | markdownify }}</a>{{ end }}{{ end }}
     </p>
     {{ end }}
-  </div>
 
-  {{ with $page.Params.hero_media }}
-  <div class="sx-hero__media" aria-hidden="true">
-    {{ $image := resources.Get (path.Join "media" .) }}
-    {{ if $image }}
-      {{ if eq $image.MediaType.SubType "svg" }}
-        {{/* Drop the export's <title> so the decorative SVG shows no hover tooltip. */}}
-        {{ $image.Content | replaceRE "<title>[^<]*</title>" "" | safeHTML }}
-      {{ else }}
-        {{/* WebP at most 1600 px wide (the hero shows ~720 CSS px, so this covers 2x screens); never upscaled. */}}
-        {{ $img := $image.Resize (printf "%dx webp" (cond (gt $image.Width 1600) 1600 $image.Width)) }}
-        <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="">
+    {{ if or $carousel (index $slides 0).credit }}
+    <div class="sx-hero__meta">
+      {{ if $carousel }}
+      <div class="sx-hero__dots" role="group" aria-label="Background images">
+        {{ range $i, $s := $slides }}
+        <button type="button" data-go="{{ $i }}" data-credit="{{ $s.credit }}" aria-label="Show image {{ add $i 1 }} of {{ len $slides }}"{{ if eq $i 0 }} class="is-active" aria-current="true"{{ end }}></button>
+        {{ end }}
+      </div>
       {{ end }}
+      <p class="sx-hero__credit"{{ if not (index $slides 0).credit }} hidden{{ end }}>Image: <span>{{ (index $slides 0).credit }}</span></p>
+    </div>
     {{ end }}
   </div>
+
+  <script>
+    // Highlight bands: under each [data-band] element, a hidden copy of its text (same wrapping) whose line
+    // backgrounds are drawn with one group opacity; the real text is wrapped so it sits on top.
+    (function () {
+      var els = document.currentScript.previousElementSibling.querySelectorAll("[data-band]");
+      Array.prototype.forEach.call(els, function (el) {
+        var tag = el.tagName === "DIV" ? "div" : "span";
+        var band = document.createElement(tag), text = document.createElement(tag);
+        band.className = "sx-band";
+        band.setAttribute("aria-hidden", "true");
+        band.inert = true;
+        text.className = "sx-band-text";
+        Array.prototype.forEach.call(el.childNodes, function (n) { band.appendChild(n.cloneNode(true)); });
+        while (el.firstChild) text.appendChild(el.firstChild);
+        el.appendChild(band);
+        el.appendChild(text);
+      });
+    })();
+  </script>
+
+  {{/* Cut-out slides: in the right-hand column, standing on the bottom line. */}}
+  {{ if $slides }}
+  <div class="sx-hero__media" aria-hidden="true">
+    {{ range $i, $s := $slides }}{{ if not $s.fill }}
+    {{ with resources.Get (path.Join "media" $s.image) }}
+      {{ if and (eq .MediaType.SubType "svg") (not $carousel) }}
+        {{ .Content | replaceRE "<title>[^<]*</title>" "" | safeHTML }}
+      {{ else }}
+        {{/* WebP at most 1600 px wide (shown at ~720 CSS px, so this covers 2x screens); never upscaled. */}}
+        {{ $img := .Resize (printf "%dx webp" (cond (gt .Width 1600) 1600 .Width)) }}
+        <img src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}" alt="" data-slide="{{ $i }}"{{ with $s.align }} data-align="{{ . }}"{{ end }}{{ with $s.scale }} style="--slide-scale: {{ . }}"{{ end }}{{ if eq $i 0 }} class="is-active"{{ else }} loading="lazy"{{ end }}>
+      {{ end }}
+    {{ end }}
+    {{ end }}{{ end }}
+  </div>
+  {{ end }}
+
+  {{ if $carousel }}
+  <script>
+    // Crossfade the hero slides every 9 s (cut-outs and full-width layers share one sequence). The indicators jump to
+    // a slide and restart the timer; with reduced motion there is no autoplay, but the indicators still work.
+    (function () {
+      var hero = document.currentScript.parentElement;
+      var slides = Array.prototype.slice.call(hero.querySelectorAll("[data-slide]"))
+        .sort(function (a, b) { return a.dataset.slide - b.dataset.slide; });
+      var dots = hero.querySelectorAll(".sx-hero__dots button");
+      var creditBox = hero.querySelector(".sx-hero__credit");
+      var creditName = creditBox.querySelector("span");
+      if (slides.length < 2) return;
+      var i = 0, timer = null;
+      var autoplay = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      function show(n) {
+        slides[i].classList.remove("is-active");
+        dots[i].classList.remove("is-active");
+        dots[i].removeAttribute("aria-current");
+        i = n;
+        slides[i].classList.add("is-active");
+        dots[i].classList.add("is-active");
+        dots[i].setAttribute("aria-current", "true");
+        hero.classList.toggle("is-fill", !!slides[i].closest(".sx-hero__fill"));
+        var credit = dots[i].dataset.credit;
+        creditBox.hidden = !credit;
+        creditName.textContent = credit || "";
+      }
+      function start() {
+        clearInterval(timer);
+        if (autoplay) timer = setInterval(function () { if (!document.hidden) show((i + 1) % slides.length); }, 9000);
+      }
+      Array.prototype.forEach.call(dots, function (dot) {
+        dot.addEventListener("click", function () { show(+dot.dataset.go); start(); });
+      });
+      start();
+    })();
+  </script>
   {{ end }}
 </div>

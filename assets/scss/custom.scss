@@ -174,7 +174,7 @@ body.dark .section-heading p {
   mask-image: linear-gradient(#000 40%, transparent);
 }
 
-.wg-hero .container { position: relative; }
+.wg-hero .container { position: static; }  // full-width hero slides position against the section
 
 .sx-hero {
   display: grid;
@@ -192,7 +192,7 @@ body.dark .section-heading p {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--sx-orange);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.9rem;
 }
 
 .sx-hero__title {
@@ -203,48 +203,115 @@ body.dark .section-heading p {
   margin: 0 0 1.5rem;
 }
 
-// The artwork runs under the text, so the tagline and lead sit on highlight bands that follow
-// each line (box-decoration-break repeats the padding at every line break).
+// The artwork runs under the text, so the tagline and lead sit on see-through highlight bands that follow each line
+// (box-decoration-break repeats the padding at every line break). The bands are a hidden copy of the text in a group
+// with one opacity, so overlapping line bands show no darker seams; the readable text sits on top.
 .sx-hero__tagline {
   font-family: var(--sx-font-head);
   font-size: clamp(1.3rem, 2.4vw, 1.9rem);
   line-height: 1.3;
   max-width: 22em;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.6rem;
 }
 
+.sx-eyebrow,
+.sx-hero__title,
 .sx-hero__tagline,
 .sx-hero__lead { position: relative; }
 
-// Band layer: same text, same wrapping, transparent ink; one opacity for the whole group.
 .sx-band { position: absolute; inset: 0; pointer-events: none; color: transparent; }
 .sx-band * { color: transparent !important; border-color: transparent !important; }
 .sx-band-text { position: relative; }
 .sx-hero__tagline .sx-band { opacity: 0.85; }
+.sx-eyebrow .sx-band,
+.sx-hero__title .sx-band,
 .sx-hero__lead .sx-band { opacity: 0.7; }
 
-.sx-hero__tagline .sx-hl,
+.sx-hero__text .sx-hl,
 .sx-hero__lead p {
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
 
-.sx-hero__tagline .sx-hl { padding: 0.04em 0.3em; color: var(--sx-bg); }
+// Band padding: room between the words and the band's edges.
+.sx-eyebrow .sx-hl { padding: 0.55em 0.8em; }
+.sx-eyebrow .sx-band .sx-hl { background: #000; }
+// The display face's line box has a lot of room above and below the capitals, so the title band is painted over
+// only the middle ~80% of each line (a sized gradient, repeated per line by box-decoration-break) to hug the letters.
+.sx-hero__title .sx-hl { padding: 0 0.14em; }
+.sx-hero__title .sx-band .sx-hl { background: linear-gradient(#000, #000) 0 46% / 100% 80% no-repeat; }
+.sx-hero__tagline .sx-hl { padding: 0.1em 0.45em; color: var(--sx-bg); }
 .sx-hero__tagline .sx-band .sx-hl { background: var(--sx-orange); }
 
 .sx-hero__lead {
   max-width: 34em;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.75;
 }
 
-.sx-hero__lead p { display: inline; padding: 0.18em 0.5em; color: #c3c9d0; }
+.sx-hero__lead p { display: inline; padding: 0.45em 0.9em; color: #c3c9d0; }
 .sx-hero__lead .sx-band p { background: #000; }
+
+// Layers: full-width slides at the back (covering the whole hero section), cut-outs above them, text on top.
+.sx-hero__fill { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.sx-hero__fill img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 30% 50%;
+  filter: brightness(0.5);  // an even dim (not a fade) so the title and buttons stay readable
+  opacity: 0;
+  transition: opacity 1.4s ease;
+}
+.sx-hero__fill img.is-active { opacity: 1; }
+// While a full-width slide shows (the carousel script sets .is-fill), give the outline button a dark fill so it
+// stands off the busy image.
+.sx-hero .sx-btn--ghost { transition: color 0.8s ease, background-color 0.8s ease; }
+.sx-hero.is-fill .sx-btn--ghost { background-color: rgba(11, 13, 16, 0.75); }
+.sx-hero__media { z-index: 1; }
+.sx-hero__text { z-index: 2; }
 
 .sx-hero__lead a { color: var(--sx-text); border-bottom: 1px solid var(--sx-line-strong); }
 .sx-hero__lead a:hover { color: var(--sx-orange); border-color: var(--sx-orange); }
 
 .sx-hero__ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 2rem 0 0; }
+
+// Carousel indicators: short bars, the current one in orange. The button is taller than the bar for an easier target.
+.sx-hero__meta { display: flex; align-items: center; flex-wrap: wrap; gap: 0.75rem 1.25rem; margin-top: 2.25rem; }
+.sx-hero__dots { display: flex; gap: 0.5rem; }
+body.dark .sx-hero__credit {
+  margin: 0;
+  font-family: var(--sx-font-label);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sx-muted);
+  transition: color 0.8s ease;
+}
+body.dark .sx-hero.is-fill .sx-hero__credit { color: var(--sx-text); }
+.sx-hero__dots button {
+  width: 2rem;
+  height: 1rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.sx-hero__dots button::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: rgba(233, 231, 226, 0.35);
+  transition: background-color 0.4s ease;
+}
+.sx-hero__dots button:hover::before { background: rgba(233, 231, 226, 0.7); }
+.sx-hero__dots button.is-active::before { background: var(--sx-orange); }
+.sx-hero__dots button:focus-visible { outline: 2px solid var(--sx-orange); outline-offset: 2px; }
 
 .sx-hero__media {
   position: relative;
@@ -253,12 +320,20 @@ body.dark .section-heading p {
   justify-content: flex-start;
   align-self: end;
   margin-left: -45%;  // the artwork starts this far back under the text
-  margin-top: -4rem;   // and rise into the hero's top padding
+  margin-top: calc(-4rem - 50px);   // and rise through the hero's top padding and the section's 50px, to just under the header
 }
 
 .sx-hero__media svg { width: 100%; height: auto; max-height: 70vh; }
+
+// Carousel: all images share one grid cell, standing on the bottom line, and crossfade.
+.sx-hero--carousel .sx-hero__media { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: start; }
+.sx-hero--carousel .sx-hero__media img { grid-area: 1 / 1; align-self: end; opacity: 0; transition: opacity 1.4s ease; }
+.sx-hero--carousel .sx-hero__media img.is-active { opacity: 1; }
+.sx-hero__media img[data-align="center"] { justify-self: center; margin-inline: auto; }
+.sx-hero__media img[data-align="end"] { justify-self: end; margin-left: auto; }
 // A render cut off at its bottom edge, standing on the line below the hero.
-.sx-hero__media img { display: block; height: 92vh; max-height: 880px; width: auto; max-width: none; }
+// Scales to fit both limits, keeping its shape (CSS min() is passed through: libsass can't evaluate it).
+.sx-hero__media img { display: block; width: auto; height: auto; max-height: #{"calc(min(100vh - 12px, 920px) * var(--slide-scale, 1))"}; max-width: 150%; }
 
 // -------------------------------------------------------------- research ----
 
@@ -558,7 +633,7 @@ body.dark .sx-footer a.sx-footer__ucl { display: inline-flex; padding: 6px; bord
 @media (max-width: 991.98px) {
   .sx-hero { grid-template-columns: 1fr; padding: 4rem 0 0; gap: 2rem; }
   // Stacked layout: the artwork would push the headline below the fold, so drop it.
-  .sx-hero__media { display: none; }
+  .sx-hero__media, .sx-hero__fill { display: none; }
   .sx-news { grid-template-columns: 1fr; }
 }
 

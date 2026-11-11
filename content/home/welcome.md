@@ -7,9 +7,20 @@ weight: 10
 title: "Satsuma Lab"
 eyebrow: "Lung & Heart Imaging · UCL Hawkes Institute"
 tagline: "Turning chest CT into measurements that change patient care."
-# hero_media: an image in assets/media/ (PNG with transparency fades into the page); SVGs are inlined.
-# Source artwork for SVGs lives in design/ as editable .ai files.
-hero_media: hero-lung.png
+# Hero images, shown in turn (images live in assets/media/). Transparent cut-outs stand beside the text;
+# `fill: true` makes an image cover the whole hero behind the text. The first one shows if motion is reduced.
+# `credit` is shown under the buttons while that image is on screen; `align: center` or `align: end` moves a
+# cut-out to the right along the bottom line (default: as far left, under the text, as it goes).
+hero_slides:
+  - image: hero-lung.png            # CT volume render of a cut lung
+    credit: Daryl Cheng
+    align: end
+    scale: 0.9
+  - image: hero-lung-vessels.png    # HiP-CT lung lobe vessel tree
+    credit: Adam Szmul
+  - image: hero-hipct-close.jpg     # HiP-CT close-up of the lung's vessels
+    credit: Adam Szmul
+    fill: true
 cta:
   label: "Our research"
   url: "#research"
