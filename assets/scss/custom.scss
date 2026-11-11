@@ -634,8 +634,10 @@ body.dark .sx-footer a.sx-footer__ucl { display: inline-flex; padding: 6px; bord
 
 @media (max-width: 991.98px) {
   .sx-hero { grid-template-columns: 1fr; padding: 4rem 0 0; gap: 2rem; }
-  // Stacked layout: the artwork would push the headline below the fold, so drop it.
-  .sx-hero__media, .sx-hero__fill { display: none; }
+  // Stacked layout: the artwork would push the headline below the fold, so drop it, with its indicators and credit.
+  // (.sx-hero prefix: must outrank `.sx-hero--carousel .sx-hero__media`.)
+  .sx-hero .sx-hero__media, .sx-hero .sx-hero__fill, .sx-hero .sx-hero__meta { display: none; }
+  .sx-hero.is-fill .sx-btn--ghost { background-color: transparent; }
   .sx-news { grid-template-columns: 1fr; }
 }
 
