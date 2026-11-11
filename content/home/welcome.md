@@ -7,7 +7,6 @@ weight: 10
 title: "Satsuma Lab"
 eyebrow: "Lung & Heart Imaging · UCL Hawkes Institute"
 tagline: "Turning chest CT into measurements that change patient care."
-established: 2018
 # hero_media: an SVG in assets/media/ is inlined (so it can be animated); PNG/JPG also work.
 # Source artwork for SVGs lives in design/ as editable .ai files.
 hero_media: welcome.png

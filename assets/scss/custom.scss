@@ -99,11 +99,6 @@ body.dark .navbar .nav-link span::before { content: "/"; color: var(--sx-line-st
 body.dark .navbar .nav-link:hover span::before { color: var(--sx-orange); }
 
 // ---------------------------------------------------- section headings -----
-// Every homepage section is numbered automatically: 01 /, 02 /, ...
-
-body { counter-reset: sx-section; }
-.home-section { counter-increment: sx-section; }
-
 .sx-heading,
 body.dark .section-heading {
   text-align: left !important;
@@ -122,18 +117,6 @@ body.dark .section-heading h1 {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 500;
   margin: 0;
-}
-
-.home-section .sx-heading h1::before,
-.home-section .section-heading h1::before {
-  content: counter(sx-section, decimal-leading-zero) " /";
-  display: block;
-  font-family: var(--sx-font-mono);
-  font-size: 0.8rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  color: var(--sx-orange);
-  margin-bottom: 0.75rem;
 }
 
 .sx-heading p,
@@ -250,37 +233,6 @@ body.dark .section-heading p {
 .sx-hero__lead a:hover { color: var(--sx-orange); border-color: var(--sx-orange); }
 
 .sx-hero__ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 2rem 0 0; }
-
-.sx-stats {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  justify-content: start;
-  gap: 0 2.5rem;
-  margin: 3rem 0 0;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--sx-line);
-}
-
-.sx-stats dt {
-  font-family: var(--sx-font-mono);
-  font-weight: 400;
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--sx-faint);
-  order: 2;
-}
-
-.sx-stats dd {
-  font-family: var(--sx-font-head);
-  font-size: 2rem;
-  font-weight: 500;
-  margin: 0;
-  color: var(--sx-text);
-  font-variant-numeric: tabular-nums;
-}
-
-.sx-stats > div { display: flex; flex-direction: column-reverse; }
 
 .sx-hero__media {
   position: relative;
@@ -598,7 +550,6 @@ body.dark .powered-by {
   .universal-wrapper,
   .page-footer > .container { padding-left: 20px; padding-right: 20px; }
   .home-section { padding: 64px 0; }
-  .sx-stats { grid-template-columns: repeat(2, auto); gap: 1.25rem 2rem; }
   .sx-people { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 1rem; }
   .sx-theme { min-height: 0; }
 }

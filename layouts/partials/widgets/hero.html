@@ -1,11 +1,7 @@
 {{/* Satsuma hero: overrides the Wowchemy hero widget.
      Front matter (content/home/welcome.md): title, eyebrow, tagline, body text, cta, cta_alt,
-     established, hero_media (SVG files are inlined so CSS can animate them). */}}
+     hero_media (SVG files are inlined so CSS can animate them). */}}
 {{ $page := .page }}
-
-{{ $pubs := where site.RegularPages "Section" "publication" }}
-{{ $team := where (where site.Pages "Section" "authors") ".Params.user_groups" "intersect" (slice "Principal Investigator" "Core") }}
-{{ $news := where site.RegularPages "Section" "post" }}
 
 <div class="sx-hero">
   <div class="sx-hero__text">
@@ -20,13 +16,6 @@
       {{ with $page.Params.cta_alt }}{{ if .url }}<a class="sx-btn sx-btn--ghost" href="{{ .url | relLangURL }}">{{ .label | markdownify }}</a>{{ end }}{{ end }}
     </p>
     {{ end }}
-
-    <dl class="sx-stats">
-      <div><dt>Publications</dt><dd>{{ len $pubs }}</dd></div>
-      <div><dt>Researchers</dt><dd>{{ len $team }}</dd></div>
-      <div><dt>News items</dt><dd>{{ len $news }}</dd></div>
-      {{ with $page.Params.established }}<div><dt>Established</dt><dd>{{ . }}</dd></div>{{ end }}
-    </dl>
   </div>
 
   {{ with $page.Params.hero_media }}
