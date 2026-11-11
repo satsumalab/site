@@ -8,7 +8,7 @@
 </div>
 
 <ol class="sx-themes">
-  {{ range $i, $theme := $page.Params.themes }}
+  {{ range $theme := $page.Params.themes }}
     {{ $want := slice }}
     {{ range $theme.tags }}{{ $want = $want | append (lower .) }}{{ end }}
     {{ $n := 0 }}
@@ -20,7 +20,6 @@
     {{ $link := "" }}
     {{ with index $theme.tags 0 }}{{ $link = (printf "tag/%s/" (urlize (lower .))) | relLangURL }}{{ end }}
     <li class="sx-theme">
-      <span class="sx-theme__index">R/{{ printf "%02d" (add $i 1) }}</span>
       <h2 class="sx-theme__title">{{ $theme.title | markdownify }}</h2>
       <p class="sx-theme__text">{{ $theme.text | markdownify }}</p>
       {{ if gt $n 0 }}<a class="sx-theme__link" href="{{ $link }}">{{ $n }} paper{{ if ne $n 1 }}s{{ end }} <span aria-hidden="true">→</span></a>{{ end }}

@@ -286,7 +286,7 @@ body.dark .section-heading p {
   padding: 2rem 1.75rem 1.75rem;
   border-right: 1px solid var(--sx-line);
   border-bottom: 1px solid var(--sx-line);
-  min-height: 300px;
+  min-height: 260px;
   transition: background 0.2s ease;
 }
 
@@ -305,14 +305,7 @@ body.dark .section-heading p {
 .sx-theme:hover { background: var(--sx-surface); }
 .sx-theme:hover::after { background: var(--sx-orange); }
 
-.sx-theme__index {
-  font-family: var(--sx-font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  color: var(--sx-orange);
-}
-
-.sx-theme__title { font-size: 1.45rem; font-weight: 500; margin: 2.5rem 0 0.75rem; }
+.sx-theme__title { font-size: 1.45rem; font-weight: 500; margin: 0 0 0.75rem; }
 .sx-theme__text { color: var(--sx-muted); font-size: 0.95rem; line-height: 1.6; flex: 1; }
 
 .sx-theme__link {
