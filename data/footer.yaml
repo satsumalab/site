@@ -1,0 +1,30 @@
+# Site footer: text and link columns. Edit freely; layout lives in layouts/partials/site_footer.html.
+# Internal links start with "/"; anything starting with "http" opens in a new tab.
+
+blurb: Quantitative imaging and machine learning for lung and heart disease.
+
+address:
+  - Hawkes Institute
+  - University College London
+  - Gower Street, London WC1E 6BT
+
+columns:
+  - title: Explore
+    links:
+      - name: Research
+        url: /#research
+      - name: Publications
+        url: /publication/
+      - name: People
+        url: /people/
+      - name: News
+        url: /post/
+
+  - title: At UCL
+    links:
+      - name: Hawkes Institute
+        url: https://www.ucl.ac.uk/hawkes-institute
+      - name: UCL Computer Science
+        url: https://www.ucl.ac.uk/engineering/computer-science
+      - name: University College London
+        url: https://www.ucl.ac.uk/

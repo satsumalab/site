@@ -1,0 +1,717 @@
+// =============================================================================
+// Satsuma redesign
+// Graphite base, logo voxel palette (orange / amber / grey), green used sparingly.
+// Loaded after Wowchemy's styles (see the theme's main.scss), so rules here win.
+// =============================================================================
+
+:root {
+  --sx-bg: #0b0d10;
+  --sx-surface: #12161b;
+  --sx-surface-2: #181d24;
+  --sx-line: #252b34;
+  --sx-line-strong: #343c47;
+  --sx-text: #e9e7e2;
+  --sx-muted: #9aa3ad;
+  --sx-faint: #6b7480;
+  --sx-orange: #f28c00;
+  --sx-amber: #fcd34d;
+  --sx-grey: #d3d3d3;
+  --sx-leaf: #86c343;
+  --sx-font-head: "Space Grotesk", system-ui, sans-serif;
+  --sx-font-body: "Inter", system-ui, sans-serif;
+  --sx-font-label: "IBM Plex Sans", system-ui, sans-serif;  // small caps labels, nav, dates
+  --sx-radius: 2px;
+  --sx-grid: 32px;
+}
+
+// ---------------------------------------------------------------- base ------
+
+body.dark {
+  background-color: var(--sx-bg);
+  color: var(--sx-text);
+  font-family: var(--sx-font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+body.dark h1, body.dark h2, body.dark h3, body.dark h4,
+body.dark .article-title, body.dark .section-subheading {
+  font-family: var(--sx-font-head);
+  letter-spacing: -0.01em;
+  color: var(--sx-text);
+}
+
+body.dark ::selection { background: var(--sx-orange); color: #000; }
+
+body.dark a { text-decoration: none; }
+
+.sx-mono {
+  font-family: var(--sx-font-label);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--sx-muted);
+}
+
+// Wowchemy alternates section colours; we want one continuous surface.
+body.dark .home-section,
+body.dark .home-section:nth-of-type(even),
+body.dark .home-section:nth-of-type(odd) { background-color: transparent; }
+
+.home-section { padding: 96px 0; border-top: 1px solid var(--sx-line); }
+.home-section:first-of-type { border-top: 0; }
+
+// One content width with real gutters for the navbar and every section.
+.home-section > .container,
+.navbar > .container-xl,
+.universal-wrapper,
+.page-footer > .container {
+  max-width: 1240px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+// --------------------------------------------------------------- navbar -----
+
+body.dark .navbar {
+  background: rgba(11, 13, 16, 0.78) !important;
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  border-bottom: 1px solid var(--sx-line);
+  box-shadow: none;
+  min-height: 64px;
+}
+
+// The leaves fill the top of the logo, so its box centre sits above the wordmark. Raise it so
+// the wordmark's capitals centre on the nav links instead.
+.navbar-brand img { height: 38px; width: auto; transform: translateY(-6px); }
+
+body.dark .navbar .nav-link {
+  font-family: var(--sx-font-label);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--sx-muted) !important;
+  padding: 0.5rem 0.9rem !important;
+  transition: color 0.15s ease;
+}
+
+body.dark .navbar .nav-link:hover,
+body.dark .navbar .nav-link.active { color: var(--sx-orange) !important; }
+
+body.dark .navbar .nav-link span::before { content: "/"; color: var(--sx-line-strong); margin-right: 0.35em; }
+body.dark .navbar .nav-link:hover span::before { color: var(--sx-orange); }
+
+// ---------------------------------------------------- section headings -----
+.sx-heading,
+body.dark .section-heading {
+  text-align: left !important;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  margin-bottom: 3rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--sx-line);
+}
+
+.sx-heading h1,
+body.dark .section-heading h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  margin: 0;
+}
+
+.sx-heading p,
+body.dark .section-heading p {
+  margin: 0;
+  font-family: var(--sx-font-label);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sx-muted);
+}
+
+.sx-more, .sx-heading p a { color: var(--sx-orange) !important; }
+.sx-more:hover { color: var(--sx-amber) !important; }
+
+// --------------------------------------------------------------- buttons ----
+
+.sx-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.4rem;
+  font-family: var(--sx-font-label);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--sx-line-strong);
+  border-radius: var(--sx-radius);
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.sx-btn--primary { background: var(--sx-orange); border-color: var(--sx-orange); color: #0b0d10 !important; }
+.sx-btn--primary:hover { background: var(--sx-amber); border-color: var(--sx-amber); }
+.sx-btn--ghost { color: var(--sx-text) !important; }
+.sx-btn--ghost:hover { border-color: var(--sx-orange); color: var(--sx-orange) !important; }
+
+// ----------------------------------------------------------------- hero -----
+
+.wg-hero {
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+// Faint CT-matrix grid behind the hero, fading out towards the bottom.
+.wg-hero .home-section-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px) !important;
+  background-size: var(--sx-grid) var(--sx-grid) !important;
+  background-position: center top !important;
+  -webkit-mask-image: linear-gradient(#000 40%, transparent);
+  mask-image: linear-gradient(#000 40%, transparent);
+}
+
+.wg-hero .container { position: static; }  // full-width hero slides position against the section
+
+.sx-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: 3rem;
+  padding: 4rem 0 0;  // no bottom padding: the artwork sits on the section's bottom line
+}
+
+.sx-hero__text { position: relative; z-index: 1; padding-bottom: 3.5rem; align-self: start; }
+
+.sx-eyebrow {
+  font-family: var(--sx-font-label);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sx-orange);
+  margin-bottom: 1.9rem;
+}
+
+.sx-hero__title {
+  font-size: clamp(3.2rem, 8vw, 6.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  margin: 0 0 1.5rem;
+}
+
+// The artwork runs under the text, so the tagline and lead sit on see-through highlight bands that follow each line
+// (box-decoration-break repeats the padding at every line break). The bands are a hidden copy of the text in a group
+// with one opacity, so overlapping line bands show no darker seams; the readable text sits on top.
+.sx-hero__tagline {
+  font-family: var(--sx-font-head);
+  font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+  line-height: 1.3;
+  max-width: 22em;
+  margin-bottom: 1.6rem;
+}
+
+.sx-eyebrow,
+.sx-hero__title,
+.sx-hero__tagline,
+.sx-hero__lead { position: relative; }
+
+.sx-band { position: absolute; inset: 0; pointer-events: none; color: transparent; }
+.sx-band * { color: transparent !important; border-color: transparent !important; }
+.sx-band-text { position: relative; }
+.sx-hero__tagline .sx-band { opacity: 0.85; }
+.sx-eyebrow .sx-band,
+.sx-hero__title .sx-band,
+.sx-hero__lead .sx-band { opacity: 0.7; }
+
+.sx-hero__text .sx-hl,
+.sx-hero__lead p {
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+// Band padding: room between the words and the band's edges.
+.sx-eyebrow .sx-hl { padding: 0.55em 0.8em; }
+.sx-eyebrow .sx-band .sx-hl { background: #000; }
+// The display face's line box has a lot of room above and below the capitals, so the title band is painted over
+// only the middle ~80% of each line (a sized gradient, repeated per line by box-decoration-break) to hug the letters.
+.sx-hero__title .sx-hl { padding: 0 0.14em; }
+.sx-hero__title .sx-band .sx-hl { background: linear-gradient(#000, #000) 0 46% / 100% 80% no-repeat; }
+.sx-hero__tagline .sx-hl { padding: 0.1em 0.45em; color: var(--sx-bg); }
+.sx-hero__tagline .sx-band .sx-hl { background: var(--sx-orange); }
+
+.sx-hero__lead {
+  max-width: 34em;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.sx-hero__lead p { display: inline; padding: 0.45em 0.9em; color: #c3c9d0; }
+.sx-hero__lead .sx-band p { background: #000; }
+
+// Layers: full-width slides at the back (covering the whole hero section), cut-outs above them, text on top.
+.sx-hero__fill { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.sx-hero__fill img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 30% 50%;
+  filter: brightness(0.5);  // an even dim (not a fade) so the title and buttons stay readable
+  opacity: 0;
+  transition: opacity 1.4s ease;
+}
+.sx-hero__fill img.is-active { opacity: 1; }
+// While a full-width slide shows (the carousel script sets .is-fill), give the outline button a dark fill so it
+// stands off the busy image.
+.sx-hero .sx-btn--ghost { transition: color 0.8s ease, background-color 0.8s ease; }
+.sx-hero.is-fill .sx-btn--ghost { background-color: rgba(11, 13, 16, 0.75); }
+.sx-hero__media { z-index: 1; }
+.sx-hero__text { z-index: 2; }
+
+.sx-hero__lead a { color: var(--sx-text); border-bottom: 1px solid var(--sx-line-strong); }
+.sx-hero__lead a:hover { color: var(--sx-orange); border-color: var(--sx-orange); }
+
+.sx-hero__ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 2rem 0 0; }
+
+// Carousel indicators: short bars, the current one in orange. The button is taller than the bar for an easier target.
+.sx-hero__meta { display: flex; align-items: center; flex-wrap: wrap; gap: 0.75rem 1.25rem; margin-top: 2.25rem; }
+.sx-hero__dots { display: flex; gap: 0.5rem; }
+body.dark .sx-hero__credit {
+  margin: 0;
+  font-family: var(--sx-font-label);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sx-muted);
+  transition: color 0.8s ease;
+}
+body.dark .sx-hero.is-fill .sx-hero__credit { color: var(--sx-text); }
+.sx-hero__dots button {
+  width: 2rem;
+  height: 1rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.sx-hero__dots button::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: rgba(233, 231, 226, 0.35);
+  transition: background-color 0.4s ease;
+}
+.sx-hero__dots button:hover::before { background: rgba(233, 231, 226, 0.7); }
+.sx-hero__dots button.is-active::before { background: var(--sx-orange); }
+.sx-hero__dots button:focus-visible { outline: 2px solid var(--sx-orange); outline-offset: 2px; }
+
+.sx-hero__media {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  align-self: end;
+  margin-left: -45%;  // the artwork starts this far back under the text
+  margin-top: calc(-4rem - 50px);   // and rise through the hero's top padding and the section's 50px, to just under the header
+}
+
+.sx-hero__media svg { width: 100%; height: auto; max-height: 70vh; }
+
+// Carousel: all images share one grid cell, standing on the bottom line, and crossfade.
+.sx-hero--carousel .sx-hero__media { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: start; }
+.sx-hero--carousel .sx-hero__media img { grid-area: 1 / 1; align-self: end; opacity: 0; transition: opacity 1.4s ease; }
+.sx-hero--carousel .sx-hero__media img.is-active { opacity: 1; }
+.sx-hero__media img[data-align="center"] { justify-self: center; margin-inline: auto; }
+.sx-hero__media img[data-align="end"] { justify-self: end; margin-left: auto; }
+// Keeps a right-hand cut-out clear of the text in narrow, tall windows (where its height alone would make it too wide).
+.sx-hero--carousel .sx-hero__media img[data-align="end"] { max-width: 86%; }
+// A render cut off at its bottom edge, standing on the line below the hero.
+// Scales to fit both limits, keeping its shape (CSS min() is passed through: libsass can't evaluate it).
+.sx-hero__media img { display: block; width: auto; height: auto; max-height: #{"calc(min(100vh - 12px, 920px) * var(--slide-scale, 1))"}; max-width: 150%; }
+
+// -------------------------------------------------------------- research ----
+
+.sx-themes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  border-top: 1px solid var(--sx-line);
+  border-left: 1px solid var(--sx-line);
+}
+
+.sx-theme {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.75rem 1.75rem;
+  border-right: 1px solid var(--sx-line);
+  border-bottom: 1px solid var(--sx-line);
+  min-height: 260px;
+  transition: background 0.2s ease;
+}
+
+.sx-theme:hover { background: var(--sx-surface); }
+
+.sx-theme__title { font-size: 1.45rem; font-weight: 500; margin: 0 0 0.75rem; }
+.sx-theme__text { color: var(--sx-muted); font-size: 0.95rem; line-height: 1.6; flex: 1; }
+
+.sx-theme__link {
+  font-family: var(--sx-font-label);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sx-text) !important;
+  margin-top: 1.5rem;
+}
+
+.sx-theme__link:hover { color: var(--sx-orange) !important; }
+
+// ------------------------------------------------------------------ news ----
+
+.sx-news {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+.sx-news__lead { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.sx-news__img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  padding: 1rem;
+  border: 1px solid var(--sx-line);
+  background: #fff;
+  overflow: hidden;
+}
+
+// Figures are fitted, never cropped: half a forest plot is worse than whitespace.
+.sx-news__img img { max-width: 100%; max-height: 100%; width: auto; height: auto; display: block; transition: transform 0.4s ease; }
+.sx-news__img:hover img { transform: scale(1.02); }
+
+.sx-news__body h2 { font-size: 1.6rem; font-weight: 500; line-height: 1.25; margin: 0.5rem 0 0.75rem; }
+.sx-news__body h2 a, .sx-news__list a { color: var(--sx-text) !important; }
+.sx-news__body h2 a:hover, .sx-news__list a:hover { color: var(--sx-orange) !important; }
+.sx-news__body p { color: var(--sx-muted); font-size: 0.95rem; line-height: 1.6; }
+
+.sx-news__list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--sx-line); }
+
+.sx-news__list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--sx-line);
+}
+
+.sx-news__list a { font-family: var(--sx-font-head); font-size: 1.1rem; line-height: 1.35; }
+
+// ---------------------------------------------------------------- people ----
+
+.sx-people__intro { color: var(--sx-muted); max-width: 40em; margin-bottom: 2rem; }
+
+.sx-group { margin-bottom: 3.5rem; }
+
+.sx-group__title {
+  font-family: var(--sx-font-label) !important;
+  font-size: 0.8rem !important;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sx-muted) !important;
+  margin: 0 0 1.25rem;
+}
+
+.sx-group__count { color: var(--sx-orange); margin-left: 0.5em; }
+.sx-group__count::before { content: "["; color: var(--sx-faint); }
+.sx-group__count::after { content: "]"; color: var(--sx-faint); }
+
+.sx-people {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem 1.25rem;
+}
+
+.sx-person { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.sx-person__photo {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--sx-surface-2);
+  border: 1px solid var(--sx-line);
+}
+
+.sx-person__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(1) contrast(1.05);
+  transition: filter 0.35s ease, transform 0.35s ease;
+}
+
+// Orange voxel in the corner of each portrait.
+.sx-person__photo::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  background: var(--sx-orange);
+  transform: scale(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease;
+}
+
+.sx-person:hover .sx-person__photo img { filter: none; transform: scale(1.03); }
+.sx-person:hover .sx-person__photo::after { transform: scale(1); }
+
+.sx-person__initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-family: var(--sx-font-head);
+  font-size: 3rem;
+  color: var(--sx-faint);
+}
+
+.sx-person__meta { display: flex; flex-direction: column; gap: 0.2rem; }
+.sx-person__name { font-family: var(--sx-font-head); font-size: 1.05rem; font-weight: 500; color: var(--sx-text) !important; }
+.sx-person__name:hover { color: var(--sx-orange) !important; }
+
+.sx-person__role {
+  font-family: var(--sx-font-label);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sx-muted);
+}
+
+.sx-person .network-icon { margin: 0.35rem 0 0; padding: 0; justify-content: flex-start; }
+.sx-person .network-icon li { margin-right: 0.6rem; }
+.sx-person .network-icon a { color: var(--sx-faint) !important; font-size: 0.95rem; }
+.sx-person .network-icon a:hover { color: var(--sx-orange) !important; }
+
+// Alumni / visitors: a dense text list, no photos.
+.sx-group--compact .sx-people { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0; }
+.sx-group--compact .sx-person { padding: 0.8rem 0; border-top: 1px solid var(--sx-line); }
+.sx-group--compact .sx-person__photo { display: none; }
+.sx-group--compact .sx-person__name { font-size: 0.95rem; color: var(--sx-muted) !important; }
+
+// --------------------------------------------------------------- contact ----
+
+body.dark .wg-contact .leaflet-tile-pane,
+body.dark #map .leaflet-tile-pane {
+  filter: invert(1) hue-rotate(180deg) brightness(0.8) contrast(0.9) grayscale(0.6);
+}
+
+body.dark #map { border: 1px solid var(--sx-line); border-radius: 0; }
+
+// ------------------------------------------------------ inner pages ---------
+
+body.dark .universal-wrapper h1,
+body.dark .article-header h1,
+body.dark .article-container h1 { font-weight: 500; letter-spacing: -0.02em; }
+
+body.dark .card-simple,
+body.dark .card {
+  background: var(--sx-surface);
+  border: 1px solid var(--sx-line);
+  border-radius: var(--sx-radius);
+  box-shadow: none;
+}
+
+body.dark .card-simple:hover { border-color: var(--sx-line-strong); }
+
+body.dark .article-metadata,
+body.dark .pub-list-item .article-metadata { font-family: var(--sx-font-label); font-size: 0.72rem; color: var(--sx-muted); }
+
+body.dark .btn-outline-primary,
+body.dark .btn-page-header {
+  font-family: var(--sx-font-label);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: var(--sx-radius);
+  border-color: var(--sx-line-strong);
+  color: var(--sx-text);
+}
+
+body.dark .btn-outline-primary:hover,
+body.dark .btn-page-header:hover { background: var(--sx-orange); border-color: var(--sx-orange); color: #0b0d10; }
+
+body.dark .form-control,
+body.dark .custom-select {
+  background-color: var(--sx-surface);
+  border: 1px solid var(--sx-line-strong);
+  border-radius: var(--sx-radius);
+  color: var(--sx-text);
+  font-family: var(--sx-font-label);
+  font-size: 0.8rem;
+}
+
+body.dark .img-hover-zoom { background: #fff; }
+
+// ---------------------------------------------------------------- footer ----
+
+body.dark .page-footer { border-top: 1px solid var(--sx-line); background: transparent; }
+
+// Brand block and three link columns, then a bar with the legal line and the UCL logo in the
+// bottom-right corner (UCL asks for its logo to sit in a corner, with clear space round it).
+.sx-footer { padding: 4rem 0 2rem; text-align: left; }
+
+.sx-footer__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr));
+  gap: 2.5rem 3rem;
+}
+
+.sx-footer__logo { display: inline-block; margin-bottom: 1.25rem; }
+.sx-footer__logo img { height: 40px; width: auto; display: block; }
+
+body.dark .sx-footer p { text-align: left; font-family: var(--sx-font-body); font-size: 0.9rem; letter-spacing: 0; color: var(--sx-muted); margin: 0 0 0.9rem; line-height: 1.55; }
+body.dark .sx-footer .sx-footer__blurb { color: var(--sx-text); max-width: 26em; }
+.sx-footer__contact span { font-family: var(--sx-font-label); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sx-faint); margin-right: 0.5em; }
+
+.sx-footer__title {
+  font-family: var(--sx-font-label);
+  font-size: 0.72rem !important;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sx-orange) !important;
+  margin: 0.4rem 0 1.1rem;
+}
+
+.sx-footer__col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; }
+
+body.dark .sx-footer a { color: var(--sx-text); border-bottom: 1px solid transparent; transition: color 0.15s ease, border-color 0.15s ease; }
+body.dark .sx-footer a:hover { color: var(--sx-orange); border-color: var(--sx-orange); text-decoration: none; }
+body.dark .sx-footer .sx-footer__col a { font-size: 0.9rem; color: var(--sx-muted); }
+body.dark .sx-footer .sx-footer__col a:hover { color: var(--sx-orange); }
+
+.sx-footer__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem 2rem;
+  flex-wrap: wrap;
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--sx-line);
+}
+
+body.dark .sx-footer .sx-footer__legal { font-family: var(--sx-font-label); font-size: 0.72rem; letter-spacing: 0.04em; color: var(--sx-faint); margin: 0; }
+body.dark .sx-footer .sx-footer__legal a { color: var(--sx-muted); }
+
+// Clear space: at least the width of the L's stem round the logo; the padding gives that and more.
+body.dark .sx-footer a.sx-footer__ucl { display: inline-flex; padding: 6px; border: 0; }
+.sx-footer__ucl img { height: 36px; width: auto; display: block; }
+.sx-footer__ucl span { font-family: var(--sx-font-head); font-weight: 600; font-size: 1rem; color: var(--sx-text); }
+
+// ------------------------------------------------------------ responsive ----
+
+@media (max-width: 991.98px) {
+  .sx-hero { grid-template-columns: 1fr; padding: 4rem 0 0; gap: 2rem; }
+  // Stacked layout: the artwork would push the headline below the fold, so drop it.
+  .sx-hero__media, .sx-hero__fill { display: none; }
+  .sx-news { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 575.98px) {
+  .home-section > .container,
+  .navbar > .container-xl,
+  .universal-wrapper,
+  .page-footer > .container { padding-left: 20px; padding-right: 20px; }
+  .home-section { padding: 64px 0; }
+  .sx-people { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 1rem; }
+  .sx-theme { min-height: 0; }
+}
+
+@media (max-width: 991.98px) {
+  .sx-footer__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sx-footer__brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 575.98px) {
+  .sx-footer__grid { grid-template-columns: minmax(0, 1fr); }
+}
+
+// ---------------------------------------------------------- publications ----
+
+// Single publication and post pages end on the author cards: keep them off the footer.
+.page-body > .pub,
+.page-body > .article { padding-bottom: 5rem; }
+
+.sx-pub {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr) 160px;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--sx-line);
+}
+
+.sx-pub__year {
+  font-family: var(--sx-font-label);
+  font-size: 0.85rem;
+  color: var(--sx-orange);
+  padding-top: 0.2rem;
+}
+
+.sx-pub__title { font-size: 1.2rem !important; font-weight: 500; line-height: 1.35; margin: 0 0 0.5rem; }
+.sx-pub__title a { color: var(--sx-text) !important; }
+.sx-pub__title a:hover { color: var(--sx-orange) !important; }
+
+.sx-pub__authors,
+.sx-pub__authors a,
+.sx-pub__authors span { font-size: 0.85rem; color: var(--sx-muted) !important; line-height: 1.5; }
+.sx-pub__authors .author-highlighted { color: var(--sx-text) !important; font-weight: 600; }
+
+.sx-pub__venue { font-family: var(--sx-font-label); font-size: 0.75rem; letter-spacing: 0.02em; color: var(--sx-faint); margin-top: 0.35rem; }
+.sx-pub__venue em { font-style: normal; }
+.sx-pub__links { margin-top: 0.9rem; }
+.sx-pub__links .btn { padding: 0.25rem 0.6rem; margin: 0 0.35rem 0.35rem 0; }
+
+.sx-pub__thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 8 / 5;
+  padding: 0.5rem;
+  background: #fff;
+  border: 1px solid var(--sx-line);
+  overflow: hidden;
+}
+
+.sx-pub__thumb img { max-width: 100%; max-height: 100%; width: auto; height: auto; }
+
+body.dark .universal-wrapper { max-width: 1240px; }
+body.dark .universal-wrapper h1 { text-align: left; font-size: clamp(2rem, 4vw, 3rem); font-weight: 500; margin-bottom: 2rem; }
+body.dark .universal-wrapper .isotope-item { margin-bottom: 0; }
+
+@media (max-width: 767.98px) {
+  .sx-pub { grid-template-columns: 1fr; gap: 0.5rem; }
+  .sx-pub__thumb { display: none; }
+}

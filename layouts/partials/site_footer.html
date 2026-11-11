@@ -1,0 +1,42 @@
+{{/* Satsuma footer: overrides the Wowchemy site footer.
+     Text and links come from data/footer.yaml. The UCL logo is the single-colour white version (UCL only allows
+     its full-colour logo on white or dark purple): assets/media/ucl-logo-white.svg if the brand team supplies one,
+     else ucl-logo-white.png (made white from the logo in UCL's official PowerPoint template). With neither, the
+     full name is set in text. */}}
+{{ $f := site.Data.footer }}
+{{ $logo := resources.Get "media/logo.svg" }}
+{{ $ucl := resources.Get "media/ucl-logo-white.svg" | default (resources.Get "media/ucl-logo-white.png") }}
+
+<footer class="site-footer sx-footer">
+  <div class="sx-footer__grid">
+    <div class="sx-footer__brand">
+      {{ with $logo }}<a href="{{ "/" | relLangURL }}" class="sx-footer__logo"><img src="{{ .RelPermalink }}" alt="{{ site.Title }}" height="40"></a>{{ end }}
+      {{ with $f.blurb }}<p class="sx-footer__blurb">{{ . }}</p>{{ end }}
+      {{ with $f.address }}<p class="sx-footer__address">{{ delimit . "<br>" | safeHTML }}</p>{{ end }}
+      {{ with $f.contact }}<p class="sx-footer__contact"><span>Contact</span> <a href="mailto:{{ .email }}">{{ .name }}</a></p>{{ end }}
+    </div>
+
+    {{ range $f.columns }}
+    <nav class="sx-footer__col" aria-label="{{ .title }}">
+      <h2 class="sx-footer__title">{{ .title }}</h2>
+      <ul>
+        {{ range .links }}
+        {{ $external := hasPrefix .url "http" }}
+        <li><a href="{{ if $external }}{{ .url }}{{ else }}{{ .url | relURL }}{{ end }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>{{ .name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+    {{ end }}
+  </div>
+
+  <div class="sx-footer__bar">
+    <p class="sx-footer__legal">
+      {{ replace (site.Copyright | default "© {year} Satsuma Lab") "{year}" now.Year }}, University College London
+      <span aria-hidden="true">·</span>
+      Built with <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a> and <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy</a>
+    </p>
+    <a class="sx-footer__ucl" href="https://www.ucl.ac.uk/" target="_blank" rel="noopener">
+      {{ with $ucl }}<img src="{{ .RelPermalink }}" alt="UCL" height="36">{{ else }}<span>University College London</span>{{ end }}
+    </a>
+  </div>
+</footer>

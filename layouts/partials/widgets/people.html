@@ -1,0 +1,46 @@
+{{/* Satsuma people grid: overrides the Wowchemy People widget (homepage and /people/).
+     Groups come from `content.user_groups`; Alumni and Visitors render as a compact list. */}}
+{{ $page := .page }}
+{{ $show_social := $page.Params.design.show_social | default false }}
+{{ $show_role := $page.Params.design.show_role | default true }}
+{{ $compact_groups := slice "Alumni" "Visitors" }}
+
+<div class="section-heading sx-heading">
+  <h1>{{ $page.Title | markdownify | emojify }}</h1>
+  {{ with $page.Params.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+</div>
+
+{{ with $page.Content }}<div class="sx-people__intro">{{ . }}</div>{{ end }}
+
+{{ range $page.Params.content.user_groups }}
+  {{ $group := . }}
+  {{ $query := where (where site.Pages "Section" "authors") ".Params.user_groups" "intersect" (slice $group) }}
+  {{ if $query }}
+  {{ $compact := in $compact_groups $group }}
+  <section class="sx-group{{ if $compact }} sx-group--compact{{ end }}">
+    <h2 class="sx-group__title">{{ $group | markdownify }} <span class="sx-group__count">{{ len $query }}</span></h2>
+    <ul class="sx-people">
+      {{ range $query.ByTitle }}
+        {{ $avatar := (.Resources.ByType "image").GetMatch "*vatar*" }}
+        {{ $link := "" }}
+        {{ with site.GetPage (printf "/authors/%s" (path.Base .File.Dir)) }}{{ $link = .RelPermalink }}{{ end }}
+        <li class="sx-person">
+          <a class="sx-person__photo" href="{{ $link }}" tabindex="-1" aria-hidden="true">
+            {{ with $avatar }}
+              {{ $img := .Fill "360x360 Center webp" }}
+              <img src="{{ $img.RelPermalink }}" width="360" height="360" alt="" loading="lazy">
+            {{ else }}
+              <span class="sx-person__initials">{{ substr .Title 0 1 }}</span>
+            {{ end }}
+          </a>
+          <div class="sx-person__meta">
+            <a class="sx-person__name" href="{{ $link }}">{{ .Title }}</a>
+            {{ if and $show_role .Params.role }}<span class="sx-person__role">{{ .Params.role | markdownify | emojify }}</span>{{ end }}
+            {{ if and $show_social (not $compact) }}{{ partial "social_links" . }}{{ end }}
+          </div>
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+{{ end }}

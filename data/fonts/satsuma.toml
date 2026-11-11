@@ -1,0 +1,9 @@
+# Satsuma font set
+name = "Satsuma"
+
+google_fonts = "family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500"
+
+heading_font = "Space Grotesk"
+body_font = "Inter"
+nav_font = "IBM Plex Sans"
+mono_font = "JetBrains Mono"  # code only (none on the site; not loaded, falls back to system monospace)

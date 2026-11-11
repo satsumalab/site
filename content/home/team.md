@@ -5,8 +5,8 @@ widget: people
 headless: true
 weight: 40
 
-title: Meet the Team
-subtitle:
+title: Team
+subtitle: "[Everyone, including alumni →](people/)"
 
 content:
   # Choose which groups/teams of users to display.
@@ -14,10 +14,6 @@ content:
   user_groups:
   - Principal Investigator
   - Core
-  - Affiliates
-  - Administrators
-  - Visitors
-  - Alumni
 design:
   show_interests: false
   show_role: true

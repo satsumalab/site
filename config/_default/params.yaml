@@ -5,10 +5,10 @@
 
 # Appearance
 
-theme: minimal
-day_night: true
-font: native
-font_size: L
+appearance:
+  theme_night: satsuma
+  font: satsuma
+  font_size: M
 
 # SEO
 

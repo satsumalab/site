@@ -1,21 +1,36 @@
 ---
-# A Demo section created with the Blank widget.
-# Any elements can be added in the body: https://wowchemy.com/docs/writing-markdown-latex/
-# Add more sections by duplicating this file and customizing to your requirements.
+# Homepage hero. Copy is a draft for the redesign proposal - edit freely.
 active: true
-widget: hero  # See https://wowchemy.com/docs/page-builder/
-headless: true  # This file represents a page section.
-weight: 10  # Order that this section will appear.
+widget: hero
+headless: true
+weight: 10
 title: "Satsuma Lab"
-hero_media: welcome.png
+eyebrow: "Lung & Heart Imaging · UCL Hawkes Institute"
+tagline: "Turning chest CT into measurements that change patient care."
+# Hero images, shown in turn (images live in assets/media/). Transparent cut-outs stand beside the text;
+# `fill: true` makes an image cover the whole hero behind the text. The first one shows if motion is reduced.
+# `credit` is shown under the buttons while that image is on screen; `align: center` or `align: end` moves a
+# cut-out to the right along the bottom line (default: as far left, under the text, as it goes).
+hero_slides:
+  - image: hero-lung.png            # CT volume render of a cut lung
+    credit: Daryl Cheng
+    align: end
+    scale: 0.9
+  - image: hero-lung-vessels.png    # HiP-CT lung lobe vessel tree
+    credit: Adam Szmul
+    align: end
+    scale: 0.75
+  - image: hero-hipct-close.jpg     # HiP-CT close-up of the lung's vessels
+    credit: Adam Szmul
+    fill: true
+cta:
+  label: "Our research"
+  url: "#research"
+cta_alt:
+  label: "Publications"
+  url: "publication/"
 design:
-  # Choose how many columns the section has. Valid values: 1 or 2.
   columns: '1'
-  # Add custom styles
-  css_style:
-  css_class:
 ---
 
-<br>
-
-Based at the [Hawkes Institute](https://www.ucl.ac.uk/medical-image-computing/) - [University College London (UCL)](https://www.ucl.ac.uk/). Established in 2018.
+We build quantitative imaging and machine-learning methods for lung cancer screening, fibrotic lung disease and cardiothoracic imaging, based at the [Hawkes Institute](https://www.ucl.ac.uk/hawkes-institute), [University College London](https://www.ucl.ac.uk/).

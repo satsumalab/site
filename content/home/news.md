@@ -1,7 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/page-builder/
 active: true
-widget: portfolio
+widget: satsuma_news
 headless: true
 weight: 20
 
@@ -9,7 +9,7 @@ title: Latest News
 subtitle:
 
 content:
-  count: 5
+  count: 4
   filters:
     author: ""
     category: ""
