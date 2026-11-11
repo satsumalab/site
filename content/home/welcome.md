@@ -18,6 +18,8 @@ hero_slides:
     scale: 0.9
   - image: hero-lung-vessels.png    # HiP-CT lung lobe vessel tree
     credit: Adam Szmul
+    align: end
+    scale: 0.75
   - image: hero-hipct-close.jpg     # HiP-CT close-up of the lung's vessels
     credit: Adam Szmul
     fill: true

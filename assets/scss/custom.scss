@@ -331,6 +331,8 @@ body.dark .sx-hero.is-fill .sx-hero__credit { color: var(--sx-text); }
 .sx-hero--carousel .sx-hero__media img.is-active { opacity: 1; }
 .sx-hero__media img[data-align="center"] { justify-self: center; margin-inline: auto; }
 .sx-hero__media img[data-align="end"] { justify-self: end; margin-left: auto; }
+// Keeps a right-hand cut-out clear of the text in narrow, tall windows (where its height alone would make it too wide).
+.sx-hero--carousel .sx-hero__media img[data-align="end"] { max-width: 86%; }
 // A render cut off at its bottom edge, standing on the line below the hero.
 // Scales to fit both limits, keeping its shape (CSS min() is passed through: libsass can't evaluate it).
 .sx-hero__media img { display: block; width: auto; height: auto; max-height: #{"calc(min(100vh - 12px, 920px) * var(--slide-scale, 1))"}; max-width: 150%; }
