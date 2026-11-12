@@ -335,7 +335,8 @@ body.dark .sx-hero.is-fill .sx-hero__credit { color: var(--sx-text); }
 .sx-hero--carousel .sx-hero__media img[data-align="end"] { max-width: 86%; }
 // A render cut off at its bottom edge, standing on the line below the hero.
 // Scales to fit both limits, keeping its shape (CSS min() is passed through: libsass can't evaluate it).
-.sx-hero__media img { display: block; width: auto; height: auto; max-height: #{"calc(min(100vh - 12px, 920px) * var(--slide-scale, 1))"}; max-width: 150%; }
+// The 75vw limit only bites in tall portrait windows (e.g. iPad Pro 12.9"), where the height alone made it too wide.
+.sx-hero__media img { display: block; width: auto; height: auto; max-height: #{"calc(min(100vh - 12px, 920px, 75vw) * var(--slide-scale, 1))"}; max-width: 150%; }
 
 // -------------------------------------------------------------- research ----
 
@@ -634,8 +635,13 @@ body.dark .sx-footer a.sx-footer__ucl { display: inline-flex; padding: 6px; bord
 
 @media (max-width: 991.98px) {
   .sx-hero { grid-template-columns: 1fr; padding: 4rem 0 0; gap: 2rem; }
-  // Stacked layout: the artwork would push the headline below the fold, so drop it.
-  .sx-hero__media, .sx-hero__fill { display: none; }
+  // Stacked layout: the artwork would push the headline below the fold, so drop it, with its indicators and credit.
+  // (.sx-hero prefix: must outrank `.sx-hero--carousel .sx-hero__media`.)
+  .sx-hero .sx-hero__media, .sx-hero .sx-hero__fill, .sx-hero .sx-hero__meta { display: none; }
+  .sx-hero.is-fill .sx-btn--ghost { background-color: transparent; }
+  // Hamburger menu: Wowchemy drops it from 50px with a see-through fill (the navbar's blur doesn't reach it), so page
+  // headings showed through the links. Hang it from the navbar's bottom border on a solid fill instead.
+  body.dark .navbar .navbar-collapse { top: calc(100% + 1px); background-color: var(--sx-bg); border-bottom: 1px solid var(--sx-line); }
   .sx-news { grid-template-columns: 1fr; }
 }
 
